@@ -1,0 +1,79 @@
+---
+delete:
+  tags:
+  - person
+  operationId: deleteProfileImage
+  description: Delete the specified profile image for the specified user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: index
+    required: true
+    schema:
+      type: integer
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getProfileImage
+  description: Return a ProfileImage describing the specified profile image information
+    for the specified user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: index
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ProfileImage.yml#/ProfileImage
+post:
+  tags:
+  - person
+  operationId: setProfileImage
+  description: Create or replace the specified profile image for the specified user.  Return
+    a 201 (Created) status with a Location header containing the URI of the new profile
+    image.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: index
+    required: true
+    schema:
+      type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: string
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ProfileImage.yml#/ProfileImage

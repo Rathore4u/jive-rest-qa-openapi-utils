@@ -1,0 +1,62 @@
+---
+post:
+  tags:
+  - message
+  operationId: createMessageLike
+  description: Register that the requesting person likes the specified message.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - message
+  operationId: deleteMessageLike
+  description: Delete the like of the specified message by the requesting user.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - message
+  operationId: getMessageLikes
+  description: Return a paginated list of the people who like the specified message.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Person.yml#/Person"

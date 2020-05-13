@@ -1,0 +1,37 @@
+---
+get:
+  tags:
+  - person
+  operationId: getProfileFieldsPrivacy
+  description: Return a paginated list of ProfileFieldPrivacys that describes the
+    visibility of each profile field.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/ProfileFieldPrivacy.yml#/ProfileFieldPrivacy

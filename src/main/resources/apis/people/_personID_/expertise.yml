@@ -1,0 +1,22 @@
+---
+delete:
+  tags:
+  - person
+  operationId: deleteExpertiseTag2
+  description: Remove an expertise tag from a person, where the name of the tag is
+    specified query string. This alternative version allows backslashes in the tag
+    name
+  parameters:
+  - in: query
+    name: tagName
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

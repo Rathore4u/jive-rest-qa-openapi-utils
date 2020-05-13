@@ -1,0 +1,57 @@
+---
+post:
+  tags:
+  - person
+  operationId: createPersonExtProps
+  description: Save a new set of extended properties for a person with specified characteristics,
+    and return an entity representing the newly created extended properties.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/ExtProps.yml#/ExtProps
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps
+delete:
+  tags:
+  - person
+  operationId: deletePersonExtProps
+  description: Delete the existing extended properties for the specified person.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getPersonExtProps
+  description: Return the specified extended properties of a place.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps

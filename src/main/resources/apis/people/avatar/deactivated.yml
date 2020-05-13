@@ -1,0 +1,30 @@
+---
+get:
+  tags:
+  - person
+  operationId: getAvatarDeactivated
+  description: Return the binary content of the avatar image for deactivated users.
+  parameters:
+  - in: query
+    name: width
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: height
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: preserveAspectRatio
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        binary/octect-stream:
+          schema:
+            type: string
+            format: binary

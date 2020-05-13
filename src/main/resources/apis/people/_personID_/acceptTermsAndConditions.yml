@@ -1,0 +1,15 @@
+---
+post:
+  tags:
+  - person
+  operationId: acceptTermsAndConditions
+  description: Accept the terms and conditions for the authenticated user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

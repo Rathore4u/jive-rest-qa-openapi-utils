@@ -1,0 +1,40 @@
+---
+put:
+  tags:
+  - person
+  operationId: approveExpertiseTag
+  description: Used to approve a tag that a user has been endorsed with. The current
+    user and the specified user must be the same or an authorization error will occur.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: tagName
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - person
+  operationId: unendorse
+  description: Removes a tag endorsement from the current user to the specified user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: tagName
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

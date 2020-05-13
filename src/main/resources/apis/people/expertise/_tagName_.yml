@@ -1,0 +1,30 @@
+---
+get:
+  tags:
+  - person
+  operationId: getUsersByExpertise
+  description: Return paginated list of people that are experts on the specified tag.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: tagName
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

@@ -1,0 +1,74 @@
+---
+post:
+  tags:
+    - invite
+  operationId: createInvite
+  description: Creates and sends invites to one or many persons for the specified place.
+               The invitees can be defined by passing their email address, username or person URI.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/InviteRequest.yml#/InviteRequest
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/InviteEntities.yml#/InviteEntities
+
+get:
+  tags:
+    - invite
+  operationId: getInvites
+  description: Return the invites of the specified place that match the specified criteria.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: inviter
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: invitee
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: startIndex
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: count
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/InviteEntities.yml#/InviteEntities

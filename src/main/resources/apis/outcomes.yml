@@ -1,0 +1,35 @@
+---
+get:
+  tags:
+  - outcomes
+  operationId: getOutcomes
+  description: Returns a paginated list of outcomes that were created by the requesting
+    person.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: hidden
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        'application/json':
+          schema:
+            $ref: ../models/OutcomeEntities.yml#/OutcomeEntities

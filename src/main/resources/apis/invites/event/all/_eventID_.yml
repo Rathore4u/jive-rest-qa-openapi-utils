@@ -1,0 +1,14 @@
+---
+get:
+  tags:
+  - invite-event
+  operationId: getInvites
+  description: ''
+  parameters: 
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/EventInviteEntities.yml#/EventInviteEntities

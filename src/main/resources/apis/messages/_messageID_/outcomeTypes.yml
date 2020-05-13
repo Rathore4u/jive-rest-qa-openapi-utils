@@ -1,0 +1,35 @@
+---
+get:
+  tags:
+  - message
+  operationId: getOutcomeTypes
+  description: Return a paginated list of the possible outcome types for the specified
+    message.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/OutcomeType.yml#/OutcomeType"

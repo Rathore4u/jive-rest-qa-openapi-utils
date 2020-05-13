@@ -1,0 +1,24 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPersonByUsername
+  description: Return a Person describing the requested Jive user by username.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: username
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person

@@ -1,0 +1,13 @@
+---
+get:
+  tags:
+  - noop
+  operationId: noopDiscussion
+  description: this api is only a placeholder in order to let the generator generate some entity
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/DiscussionEntities.yml#/DiscussionEntities

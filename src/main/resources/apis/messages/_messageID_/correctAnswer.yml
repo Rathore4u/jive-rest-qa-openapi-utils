@@ -1,0 +1,24 @@
+---
+put:
+  tags:
+  - message
+  operationId: markCorrect
+  description: Mark the specified message correct.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - message
+  operationId: unmarkCorrect
+  description: Unmark the specified message correct.
+  parameters: 
+  responses:
+    '200':
+      description: Success

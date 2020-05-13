@@ -1,0 +1,33 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPersonFeaturedContent
+  description: Return a list of featured content objects for the specified person.
+    This is the same as requesting the featured content for the specified person's
+    container via getFeaturedContent(personID, filters, fields, abridged).
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content

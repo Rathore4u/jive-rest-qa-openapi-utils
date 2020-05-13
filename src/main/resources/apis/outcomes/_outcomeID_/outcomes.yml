@@ -1,0 +1,30 @@
+---
+post:
+  tags:
+  - outcomes
+  operationId: createOutcome
+  description: Create a new outcome as a child of the existing outcome with the specified
+    characteristics.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: outcomeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          $ref: ../models/OutcomeBase.yml#/OutcomeBase
+  responses:
+    '201':
+      description: Success
+      content:
+        'application/json':
+          schema:
+            $ref: ../models/OutcomeBase.yml#/OutcomeBase

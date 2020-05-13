@@ -1,0 +1,24 @@
+---
+get:
+  tags:
+  - person
+  operationId: getManager
+  description: Return a Person describing the manager of the specified person.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person

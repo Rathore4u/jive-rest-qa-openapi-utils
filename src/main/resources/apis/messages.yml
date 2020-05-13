@@ -1,0 +1,37 @@
+---
+post:
+  tags:
+  - message
+  operationId: createMessage
+  description: Create a new message with the specified characteristics.  The parent
+    field must contain the URI of either a discussion for which this is a direct reply,
+    or the URI of a previous message to which this is a reply. Uploaded files will
+    be added to the message as attachments.
+  parameters:
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/Message.yml#/Message"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Message.yml#/Message"

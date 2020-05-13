@@ -1,0 +1,16 @@
+---
+get:
+  tags:
+  - images
+  operationId: getCustomStatusLevelImage
+  description: Return the binary image content of the custom status level image for
+    the specified name.
+  parameters:
+  - in: path
+    name: name
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

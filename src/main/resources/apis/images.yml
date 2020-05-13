@@ -1,0 +1,30 @@
+---
+post:
+  tags:
+  - images
+  operationId: uploadImage
+  description: Upload an image as a multipart/form-data request body, store it as
+    a temporary image, and return a 201 (Created) status with a Location header that
+    specifies the absolute URL of this temporary image.
+  parameters:
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: Success
+      headers:
+        Location:
+          schema:
+            type: string
+            description: the temporary image url
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Image.yml#/Image

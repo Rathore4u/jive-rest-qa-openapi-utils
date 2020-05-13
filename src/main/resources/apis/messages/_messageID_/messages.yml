@@ -1,0 +1,102 @@
+---
+post:
+  tags:
+  - message
+  operationId: createReply
+  description: Create a new message as a reply to an existing message with the specified
+    characteristics. Uploaded files will be added to the message as attachments.
+  parameters:
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/Message.yml#/Message"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Message.yml#/Message"
+get:
+  tags:
+  - message
+  operationId: getReplies
+  description: Return a paginated list of messages that are replies to the specified
+    message, optionally limiting the returned results to direct replies only.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  - in: query
+    name: excludeReplies
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: hierarchical
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: anchor
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: messageTarget
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Message.yml#/Message"

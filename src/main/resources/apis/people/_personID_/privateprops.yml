@@ -1,0 +1,43 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPrivateProps
+  description: Return the specified private properties of a place.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps
+post:
+  tags:
+  - person
+  operationId: savePrivateProps
+  description: Save a new set of private properties for a person with specified characteristics,
+    and return an entity representing the newly created private properties.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/PrivateProps.yml#/PrivateProps
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/PrivateProps.yml#/PrivateProps

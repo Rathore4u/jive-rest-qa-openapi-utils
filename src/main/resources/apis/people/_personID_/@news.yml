@@ -1,0 +1,29 @@
+---
+get:
+  tags:
+  - person
+  operationId: getNews
+  description: Return the specified news activity visible to the requesting person.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: maxPerStream
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/News.yml#/News

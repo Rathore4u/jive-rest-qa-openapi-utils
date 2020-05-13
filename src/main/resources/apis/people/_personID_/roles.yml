@@ -1,0 +1,19 @@
+---
+get:
+  tags:
+  - person
+  operationId: getRoles
+  description: Returns the system entitlements and whether the specified user is entitled.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/PersonRoles.yml#/PersonRoles

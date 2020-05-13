@@ -1,0 +1,19 @@
+---
+get:
+  tags:
+  - inbox
+  operationId: getCounts
+  description: Return counting information about the inbox of the person making the
+    request.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  responses:
+    '200':
+      description: Success

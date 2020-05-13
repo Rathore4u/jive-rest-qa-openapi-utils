@@ -1,0 +1,25 @@
+---
+get:
+  tags:
+  - person
+  operationId: getTopExpertise
+  description: Return the top expertise for the specified user.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

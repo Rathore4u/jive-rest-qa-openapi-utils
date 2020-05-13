@@ -1,0 +1,17 @@
+---
+get:
+  tags:
+  - person
+  operationId: getTermsAndConditions
+  description: Return the details of terms and conditions or nothing if terms and
+    conditions is not enabled. Note terms and conditions can be specified inline as
+    text or via an extra url that the customer specifies.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

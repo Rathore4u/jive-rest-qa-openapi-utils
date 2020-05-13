@@ -1,0 +1,64 @@
+---
+post:
+  tags:
+  - message
+  operationId: createMessageHelpful
+  description: Register that the requesting person considers the specified message
+    helpful.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - message
+  operationId: deleteMessageHelpful
+  description: Delete the registration of the specified message as helpful by the
+    requesting user.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - message
+  operationId: getHaveMarkedHelpful
+  description: Return a paginated list of the people who consider this message helpful.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Person.yml#/Person"

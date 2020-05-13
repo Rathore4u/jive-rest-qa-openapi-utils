@@ -1,0 +1,91 @@
+---
+post:
+  tags:
+  - person
+  operationId: createPerson
+  description: 'Create a Person for a new user based on the contents of the specified
+    Person.  Only modifiable fields that actually provide a value in the incoming
+    entity are processed. '
+  parameters:
+  - in: query
+    name: welcome
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Person.yml#/Person
+  responses:
+    '201':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getPeople
+  description: 'Return a paginated list of Persons for users that match the specified
+    criteria.
+
+'
+  parameters:
+  - in: query
+    name: ids
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: query
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: origin
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/PersonEntities.yml#/PersonEntities

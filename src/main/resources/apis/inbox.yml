@@ -1,0 +1,59 @@
+---
+get:
+  tags:
+  - inbox
+  operationId: getActivity
+  description: Return the specified inbox entries of the person making the request.
+  parameters:
+  - in: query
+    name: after
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: before
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: directive
+    required: false
+    schema:
+      type: array
+      items:
+        type: object
+  - in: query
+    name: collapse
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: oldestUnread
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/InboxEntryEntities.yml#/InboxEntryEntities

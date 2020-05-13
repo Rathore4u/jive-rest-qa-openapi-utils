@@ -1,0 +1,64 @@
+---
+get:
+  tags:
+  - person
+  operationId: getProfileFieldPrivacy
+  description: Return the specified ProfileFieldPrivacy that describes the visibility
+    of the profile field.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: fieldID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ProfileFieldPrivacy.yml#/ProfileFieldPrivacy
+put:
+  tags:
+  - person
+  operationId: updateProfileFieldPrivacy
+  description: Update the specified ProfileFieldPrivacy that describes the visibility
+    of the profile field.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: fieldID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/ProfileFieldPrivacy.yml#/ProfileFieldPrivacy
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ProfileFieldPrivacy.yml#/ProfileFieldPrivacy

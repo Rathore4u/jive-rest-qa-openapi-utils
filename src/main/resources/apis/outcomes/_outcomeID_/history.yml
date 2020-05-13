@@ -1,0 +1,24 @@
+---
+get:
+  tags:
+  - outcomes
+  operationId: getHistory
+  description: Get the history of the given outcome by following its parent outcomes.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: outcomeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        'application/json':
+          schema:
+            $ref: ../models/OutcomeBase.yml#/OutcomeBase

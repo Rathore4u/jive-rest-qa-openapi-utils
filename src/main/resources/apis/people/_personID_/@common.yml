@@ -1,0 +1,39 @@
+---
+get:
+  tags:
+  - person
+  operationId: getCommonBidirectional
+  description: Return a paginated list of Persons about bidirectionally related users
+    that you and the specified person have in common (i.e. any person whom you and
+    the specified person are both following, and who is following both you and specified
+    person).
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Person.yml#/Person

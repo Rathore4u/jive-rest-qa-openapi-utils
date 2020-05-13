@@ -1,0 +1,37 @@
+---
+get:
+  tags:
+  - person
+  operationId: getColleagues
+  description: Return a paginated list of Persons about colleagues of the specified
+    person (i.e. those who report to the same manager that this person does).
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Person.yml#/Person

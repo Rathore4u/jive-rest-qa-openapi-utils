@@ -1,0 +1,62 @@
+---
+post:
+  tags:
+  - message
+  operationId: createOutcome
+  description: ''
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/OutcomeBase.yml#/OutcomeBase
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/OutcomeBase.yml#/OutcomeBase"
+get:
+  tags:
+  - message
+  operationId: getOutcomes
+  description: Return a paginated list of the outcomes for the specified message.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/OutcomeBase.yml#/OutcomeBase"

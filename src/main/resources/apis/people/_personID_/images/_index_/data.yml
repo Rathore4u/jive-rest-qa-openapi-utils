@@ -1,0 +1,30 @@
+---
+get:
+  tags:
+  - person
+  operationId: getProfileImageData
+  description: Return the binary profile image data for the specified profile image
+    for the specified user.
+  parameters:
+  - in: query
+    name: size
+    required: false
+    schema:
+      type: integer
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: index
+    required: true
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Success
+      binary/octect-stream:
+        schema:
+          type: string
+          format: binary

@@ -1,0 +1,53 @@
+---
+post:
+  tags:
+  - person
+  operationId: addExpertiseTag
+  description: Add expertise tag(s) to a person
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getTagsUserTaggedOnUser
+  description: Returns all the tags that the current user endorsed the user with the
+    id specified with.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string

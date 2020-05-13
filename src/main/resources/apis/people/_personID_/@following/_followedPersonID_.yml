@@ -1,0 +1,70 @@
+---
+put:
+  tags:
+  - person
+  operationId: createFollowing
+  description: Create a following relationship between the specified user and the
+    specified followed user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: followedPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - person
+  operationId: deleteFollowing
+  description: Delete a following relationship between the specified user and the
+    specified followed user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: followedPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getFollowingPerson
+  description: Return a Person describing the followed person, if a following relationship
+    from the specified person exists.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: followedPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person

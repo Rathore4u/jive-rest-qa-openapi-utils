@@ -1,0 +1,17 @@
+---
+get:
+  tags:
+  - person
+  operationId: getFilterableFields
+  description: Return the set of fields that can be used for filtering users in this
+    Jive instance.
+  parameters: 
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string

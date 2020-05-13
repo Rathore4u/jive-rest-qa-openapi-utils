@@ -1,0 +1,10 @@
+---
+post:
+  tags:
+  - inbox
+  operationId: markRead
+  description: Mark everything in the inbox as having been read.
+  parameters: 
+  responses:
+    '204':
+      description: Success

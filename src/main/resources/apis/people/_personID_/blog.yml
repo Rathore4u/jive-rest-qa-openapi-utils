@@ -1,0 +1,24 @@
+---
+get:
+  tags:
+  - person
+  operationId: getBlog
+  description: Return the personal blog for the specified user.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Blog.yml#/Blog

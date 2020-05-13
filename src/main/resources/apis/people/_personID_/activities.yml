@@ -1,0 +1,56 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPersonActivity
+  description: Return the specified profile activities for the specified user.
+  parameters:
+  - in: query
+    name: after
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: before
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: collapse
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: oldestUnread
+    required: false
+    schema:
+      type: boolean
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Activity.yml#/Activity

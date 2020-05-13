@@ -1,0 +1,56 @@
+---
+post:
+  tags:
+  - person
+  operationId: createStream
+  description: Create a new custom stream for the specified user, based on the information
+    in the specified Stream.  Then, return a 201 with a Stream reflecting the new
+    stream configuration. You can discover the maximum allowed length for stream names
+    by using the metadata property 'feature.stream.name.length'.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Stream.yml#/Stream
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Stream.yml#/Stream
+get:
+  tags:
+  - person
+  operationId: getStreams
+  description: Return a list of Streams for the specified user.  Because the number
+    of streams will generally be very small, pagination is not supported.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/StreamEntities.yml#/StreamEntities

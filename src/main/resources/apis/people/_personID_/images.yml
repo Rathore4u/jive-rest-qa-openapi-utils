@@ -1,0 +1,52 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPersonProfileImages
+  description: Return a list of ProfileImages for the profile images of the specified
+    person.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/ProfileImage.yml#/ProfileImage
+post:
+  tags:
+  - person
+  operationId: setPersonProfileImage
+  description: Create the specified profile image for the specified user at the next
+    available index.  Return a 201 (Created) status with a Location header containing
+    the URI of the new profile image.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+              "$ref": ../models/ProfileImage.yml#/ProfileImage

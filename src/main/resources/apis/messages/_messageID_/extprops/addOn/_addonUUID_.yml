@@ -1,0 +1,60 @@
+---
+post:
+  tags:
+  - message
+  operationId: createExtendedPropertiesForAddon
+  description: Save a new set of extended properties for a message, and return an
+    entity representing the newly created extended properties.  Any previous extended
+    properties for this comment will be completely replaced.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - message
+  operationId: deleteExtendedPropertiesForAddon
+  description: Delete the existing extended properties for the specified message.
+  parameters:
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - message
+  operationId: getExtendedPropertiesForAddon
+  description: Return the extended properties for the specified message.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

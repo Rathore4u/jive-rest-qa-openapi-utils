@@ -1,0 +1,42 @@
+---
+get:
+  tags:
+  - images
+  operationId: getImage
+  description: Return the specified image as binary content. If width is defined and
+    height is not defined (or vice versa) then the returned size will depend on the
+    value defined for aspect ratio. For instance, if the original image is 100 (W)x
+    600 (H) and 50 (W) is requested with preserveAspectRatio equals true, then the
+    returned image will be 50 (W) x 300 (H). If preserveAspectRatio was false then
+    the returned image will be 50 (W) x 600 (H). Remember that width and height are
+    maximum possible values. This means that if you request 150 (W) then you will
+    get 100 (W) since that is the size of the image.
+  parameters:
+  - in: query
+    name: width
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: height
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: preserveAspectRatio
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: thumbnail
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: imageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

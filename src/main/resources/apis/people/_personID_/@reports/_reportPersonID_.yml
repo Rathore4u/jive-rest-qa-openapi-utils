@@ -1,0 +1,70 @@
+---
+put:
+  tags:
+  - person
+  operationId: createReport
+  description: Create a manager-report relationship between the specified user and
+    the specified report user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: reportPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - person
+  operationId: deleteReport
+  description: Delete (i.e. retire) an existing manager-report relationship between
+    the specified manager user and the specified report user.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: reportPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getReport
+  description: Return a Person describing the specified direct report of the specified
+    person, if such a relationship exists.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: reportPersonID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person

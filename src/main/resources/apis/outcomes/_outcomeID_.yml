@@ -1,0 +1,67 @@
+---
+delete:
+  tags:
+  - outcomes
+  operationId: deleteOutcome
+  description: Delete the outcome of the specified outcome entry by the requesting
+    user.
+  parameters:
+  - in: path
+    name: outcomeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - outcomes
+  operationId: getOutcome
+  description: Return the specified outcome entry with the specified fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: outcomeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        'application/json':
+          schema:
+            $ref: ../models/OutcomeBase.yml#/OutcomeBase
+put:
+  tags:
+  - outcomes
+  operationId: updateOutcome
+  description: Update the specified outcome with the specified characteristics.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: outcomeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      'application/json':
+        schema:
+          $ref: ../models/OutcomeBase.yml#/OutcomeBase
+  responses:
+    '200':
+      description: Success
+      content:
+        'application/json':
+          schema:
+            $ref: ../models/OutcomeBase.yml#/OutcomeBase

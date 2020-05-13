@@ -1,0 +1,42 @@
+---
+post:
+  tags:
+  - person
+  operationId: createPersonPage
+  description: 'Create a new Page for a user based on the contents of the specified
+    Page.  Only modifiable fields that actually provide a value in the incoming entity
+    are processed. '
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Page.yml#/Page
+  responses:
+    '201':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getPersonPages
+  description: Return a list of pages(currently only one) Page that a user has created
+    with parent as user. currently you can only create one page with user as parent
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      application/json:
+        schema:
+          type: array
+          items:
+            "$ref": ../models/Page.yml#/Page

@@ -1,0 +1,66 @@
+---
+delete:
+  tags:
+    - invite
+  operationId: deleteInvite
+  description: Delete the specified invitation.
+  parameters:
+    - in: path
+      name: inviteID
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+    - invite
+  operationId: getInvite
+  description: Return the specified invitation.
+  parameters:
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: path
+      name: inviteID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Invite.yml#/Invite
+put:
+  tags:
+    - invite
+  operationId: updateInvite
+  description: Update the state of the specified invitation.
+  parameters:
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: path
+      name: inviteID
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Invite.yml#/Invite
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Invite.yml#/Invite

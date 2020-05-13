@@ -1,0 +1,27 @@
+---
+post:
+  tags:
+  - invite-event
+  operationId: createInvites
+  description: 'Creates and sends invites to one or many persons for the specified
+    event. The invitees can be defined by passing their username or person URI.  An
+    example of the required JSON input is:'
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: eventID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/EventInviteRequest.yml#/EventInviteRequest
+  responses:
+    '201':
+      description: Success

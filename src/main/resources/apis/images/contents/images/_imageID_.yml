@@ -1,0 +1,15 @@
+---
+delete:
+  tags:
+  - images
+  operationId: deleteContentImage
+  description: Delete the specified image that belongs to an Update.
+  parameters:
+  - in: path
+    name: imageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

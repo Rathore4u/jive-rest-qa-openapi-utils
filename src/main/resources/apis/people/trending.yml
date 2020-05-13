@@ -1,0 +1,32 @@
+---
+get:
+  tags:
+  - person
+  operationId: getTrendingPeople
+  description: Return a list of trending Persons for users that match the specified
+    filter criteria. Do a GET to /api/core/v3/metadata/properties/feature.recommender.enabled
+    to figure out whether recommendation service is enabled or not.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      application/json:
+        schema:
+          type: array
+          items:
+            "$ref": ../models/Person.yml#/Person

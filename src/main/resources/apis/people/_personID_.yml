@@ -1,0 +1,67 @@
+---
+delete:
+  tags:
+  - person
+  operationId: deletePerson
+  description: Trigger a background task to delete the specified person, and all of
+    their content.  Returns an HTTP 202 (Accepted) status to indicate the the deletion
+    request has been accepted.  The only way that a client can tell it has been completed
+    is by trying a GET on the person URI, and waiting until a NotFoundException is
+    returned.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '202':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getPerson
+  description: Return a Person describing the requested Jive user by ID.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person
+put:
+  tags:
+  - person
+  operationId: updatePerson
+  description: Update the specified user based on the contents of the specified Person.
+    Only modifiable fields that actually provide a value in the incoming entity are
+    processed. Then, return a Person reflecting the processed changes.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Person.yml#/Person
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Person.yml#/Person

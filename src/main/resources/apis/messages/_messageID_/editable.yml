@@ -1,0 +1,93 @@
+---
+get:
+  tags:
+  - message
+  operationId: getEditableMessage
+  description: Return the specified editable message with the specified fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Message.yml#/Message"
+post:
+  tags:
+  - message
+  operationId: lockEditableMessage
+  description: Attempt to lock the specified message for editing.  This method will
+    not fail if the message is already locked.  Check the 'editingBy' field in returned
+    entity to see who owns the lock.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - message
+  operationId: unlockEditableMessage
+  description: Unlock the specified message.
+  parameters:
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+put:
+  tags:
+  - message
+  operationId: updateEditableMessage
+  description: Update the specified message with the specified characteristics including
+    the option to replace existing attachments with the ones uploaded in the request.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: messageID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/Message.yml#/Message"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Message.yml#/Message"

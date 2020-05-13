@@ -1,0 +1,39 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPersonTrendingPlaces
+  description: Return a list of trending places. It's possible for some Jive instances
+    to have recommendation disabled, or too few recommendations, in which case the
+    service falls back to the user's most frequent places unless otherwise specified
+    with the fallback parameter.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fallback
+    required: false
+    schema:
+      type: boolean
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Place.yml#/Place

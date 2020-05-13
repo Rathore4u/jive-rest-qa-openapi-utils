@@ -1,0 +1,92 @@
+---
+delete:
+  tags:
+  - person
+  operationId: deleteAvatar
+  description: Delete the active avatar for the specified user. Only uploaded avatars
+    can be deleted. The system avatar will be selected for the user after the delete
+    operation is completed.
+  parameters:
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - person
+  operationId: getAvatar
+  description: Return the binary content of the avatar image for the specified user.
+    If width is defined and height is not defined (or vice versa) then the returned
+    size will depend on the value defined for aspect ratio. For instance, if the original
+    image is 100 (W)x 600 (H) and 50 (W) is requested with preserveAspectRatio equals
+    true, then the returned image will be 50 (W) x 300 (H). If preserveAspectRatio
+    was false then the returned image will be 50 (W) x 600 (H). Remember that width
+    and height are maximum possible values. This means that if you request 150 (W)
+    then you will get 100 (W) since that is the size of the image.
+  parameters:
+  - in: query
+    name: width
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: height
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: preserveAspectRatio
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      conent:
+        application/octect-stream:
+          schema:
+            type: string
+            format: binary
+put:
+  tags:
+  - person
+  operationId: setAvatar
+  description: Set the binary content of the active avatar image for the specified
+    user by specifying the URL where the image will be fetched from.
+  parameters:
+  - in: query
+    name: avatarName
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: uri
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            avatar:
+              type: string
+              format: binary
+  responses:
+    '200':
+      description: Success

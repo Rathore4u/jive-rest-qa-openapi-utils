@@ -1,0 +1,17 @@
+---
+get:
+  tags:
+  - person
+  operationId: getResources
+  description: Return metadata about the resources available for our data object type
+    in this Jive instance.
+  parameters: 
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Resource.yml#/Resource

@@ -1,0 +1,39 @@
+---
+get:
+  tags:
+  - person
+  operationId: getAllPeople
+  description: 'Return a paginated list of Persons for users that match the specified
+    criteria.  Users will be sorted by userID ascending.
+
+'
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Person.yml#/Person

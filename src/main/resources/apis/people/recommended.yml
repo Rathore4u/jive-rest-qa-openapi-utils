@@ -1,0 +1,26 @@
+---
+get:
+  tags:
+  - person
+  operationId: getRecommendedPeople
+  description: Return a list of recommended Persons for users. Do a GET to /api/core/v3/metadata/properties/feature.recommender.enabled
+    to figure out whether recommendation service is enabled or not.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      application/json:
+        schema:
+          type: array
+          items:
+            "$ref": ../models/Person.yml#/Person

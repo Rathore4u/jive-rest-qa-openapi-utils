@@ -1,0 +1,24 @@
+---
+get:
+  tags:
+  - person
+  operationId: getPagesPrototype
+  description: Return a new page, that is not persistent, based on the default Your
+    View page.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      application/json:
+        schema:
+          "$ref": ../models/Page.yml#/Page
