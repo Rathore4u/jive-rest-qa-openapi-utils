@@ -1,0 +1,24 @@
+---
+post:
+  tags:
+  - share
+  operationId: createShare
+  description: ''
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/ShareRequest.yml#/ShareRequest"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Share.yml#/Share"

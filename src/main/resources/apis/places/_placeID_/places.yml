@@ -1,0 +1,46 @@
+---
+get:
+  tags:
+  - places
+  operationId: getPlacePlaces
+  description: Return a paginated list of places contained within the specified place.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Place.yml#/Place

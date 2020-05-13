@@ -1,0 +1,33 @@
+---
+get:
+  tags:
+  - places
+  operationId: getSuggestedPlaces
+  description: Return a list of suggested places that the specified content type could
+    be posted by the requesting person, without any consideration of the person's
+    'current' place.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: contentType
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../models/Place.yml#/Place

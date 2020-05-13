@@ -1,0 +1,21 @@
+---
+get:
+  tags:
+  - videos
+  operationId: getVideoImage
+  description: Return the still image of the specified video as binary content and
+    scaled to the requested size.
+  parameters:
+  - in: query
+    name: size
+    required: false
+    schema:
+      type: integer
+  - in: path
+    name: videoID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

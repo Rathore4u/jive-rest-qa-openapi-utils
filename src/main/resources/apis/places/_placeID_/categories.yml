@@ -1,0 +1,60 @@
+---
+post:
+  tags:
+  - places
+  operationId: createPlaceCategory
+  description: Create a new category for a place with specified characteristics, and
+    return an entity representing the newly created category.
+  parameters:
+  - in: query
+    name: autoCategorize
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Category.yml#/Category
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Category.yml#/Category
+get:
+  tags:
+  - places
+  operationId: getPlaceCategories
+  description: Return categories associated to the specified place.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Category.yml#/Category

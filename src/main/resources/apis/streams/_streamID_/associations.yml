@@ -1,0 +1,66 @@
+---
+post:
+  tags:
+  - stream
+  operationId: addAssociations
+  description: Add associations between the specified custom stream and the list of
+    specified Jive objects.  This is an all or nothing operation; if any individual
+    attempt to associate fails, all previously successful attempts will be rolled
+    back.
+  parameters:
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - stream
+  operationId: getAssociations
+  description: Return a paginated list of s for Jive objects that are associated with
+    the specified stream, and match the optionally specified filters.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: array
+      items:
+        type: object
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/JiveObjectEntities.yml#/JiveObjectEntities"

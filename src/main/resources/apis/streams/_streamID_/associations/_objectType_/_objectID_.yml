@@ -1,0 +1,60 @@
+---
+get:
+  tags:
+  - stream
+  operationId: getAssociation
+  description: Return an Object for the specified associated object with the specified
+    stream (if any).
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: objectType
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: objectID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/JiveObject.yml#/JiveObject"
+delete:
+  tags:
+  - stream
+  operationId: removeAssociation
+  description: Remove an association between the specified custom stream and the specified
+    Jive object.
+  parameters:
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: objectType
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: objectID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

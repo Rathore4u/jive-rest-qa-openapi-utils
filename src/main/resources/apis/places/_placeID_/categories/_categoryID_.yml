@@ -1,0 +1,87 @@
+---
+delete:
+  tags:
+  - places
+  operationId: deletePlaceCategory
+  description: Delete the existing category for the specified place. Only admins of
+    the place can manage place categories.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: categoryID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - places
+  operationId: getPlaceCategory
+  description: Return the specified category of a place.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: categoryID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Category.yml#/Category
+put:
+  tags:
+  - places
+  operationId: updatePlaceCategory
+  description: Update an existing category with specified characteristics.
+  parameters:
+  - in: query
+    name: autoCategorize
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: categoryID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Category.yml#/Category
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Category.yml#/Category

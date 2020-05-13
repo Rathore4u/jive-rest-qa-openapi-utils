@@ -1,0 +1,31 @@
+---
+get:
+  tags:
+    - places
+  operationId: getFeaturedContentForPlace
+  description: Return a list of featured content objects in the specified place.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: abridged
+      required: false
+      schema:
+        type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content

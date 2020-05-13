@@ -1,0 +1,75 @@
+---
+post:
+  tags:
+  - places
+  operationId: createPlace
+  description: Create a new place with specified characteristics, and return an entity
+    representing the newly created place.
+  parameters:
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Place.yml#/Place
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Place.yml#/Place
+get:
+  tags:
+  - places
+  operationId: getPlaces
+  description: Return a paginated list of places that match the specified filter criteria.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Place.yml#/Place

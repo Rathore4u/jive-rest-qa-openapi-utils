@@ -1,0 +1,31 @@
+---
+get:
+  tags:
+  - places
+  operationId: getPages
+  description: Return a list of pages related to the specified place.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Page.yml#/Page

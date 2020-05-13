@@ -1,0 +1,34 @@
+---
+get:
+  tags:
+  - version
+  operationId: getVersions
+  description: Return a paginated list of versions of the specified content.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ContentVersionEntities.yml#/ContentVersionEntities"

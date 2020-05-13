@@ -1,0 +1,99 @@
+---
+post:
+  tags:
+    - places
+  operationId: createContentInPlace
+  description: Create a new content object with specified characteristics, and return
+    an entity representing the newly created content object. Uploaded files will be
+    added to the new content object as attachments. Uploading attachments is only
+    allowed for those content types that support attachments. A BAD_REQUEST error
+    will be returned if attachments are passed and the content type does not support
+    them.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: published
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: updated
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Content.yml#/Content
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content
+get:
+  tags:
+    - places
+  operationId: getContentInPlace
+  description: Return a list of featured content objects in the specified place.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: sort
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: startIndex
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: count
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: abridged
+      required: false
+      schema:
+        type: boolean
+    - in: query
+      name: filter
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+             "$ref": ../models/Content.yml#/Content

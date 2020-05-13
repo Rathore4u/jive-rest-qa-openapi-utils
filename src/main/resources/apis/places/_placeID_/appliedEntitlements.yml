@@ -1,0 +1,37 @@
+---
+get:
+  tags:
+  - places
+  operationId: getAppliedEntitlements
+  description: " Obtains a paginated list of applied entitlement entities for a given
+    place id"
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+             "$ref": ../models/AppliedEntitlement.yml#/AppliedEntitlement

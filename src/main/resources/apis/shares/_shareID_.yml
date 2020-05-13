@@ -1,0 +1,38 @@
+---
+delete:
+  tags:
+  - share
+  operationId: deleteShare
+  description: Delete the specified share.
+  parameters:
+  - in: path
+    name: shareID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - share
+  operationId: getShare
+  description: Retrieve and return the specified share.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: shareID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Share.yml#/Share"

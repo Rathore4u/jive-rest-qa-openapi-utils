@@ -1,0 +1,57 @@
+---
+post:
+  tags:
+    - places
+  operationId: createPlaceStaticData
+  description: 'Create and return a new static resource associated with the specified
+    place, including the specified data content. The minimum information needed in
+    the JSON object is:'
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Static.yml#/Static
+get:
+  tags:
+    - places
+  operationId: getPlaceStatics
+  description: Return a list of the static resources associated with the specified
+    place.
+  parameters:
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: path
+      name: placeID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Static.yml#/Static

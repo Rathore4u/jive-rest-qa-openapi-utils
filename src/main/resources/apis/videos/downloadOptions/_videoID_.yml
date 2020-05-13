@@ -1,0 +1,15 @@
+---
+get:
+  tags:
+  - videos
+  operationId: getDownloadOptions
+  description: Return the Download options for this video.
+  parameters:
+  - in: path
+    name: videoID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

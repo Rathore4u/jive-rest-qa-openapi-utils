@@ -1,0 +1,70 @@
+---
+post:
+  tags:
+  - places
+  operationId: createPlaceAnnouncement
+  description: Create a new announcement associated with this place. An appropriate
+    parent field will be calculated and injected automatically.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Announcement.yml#/Announcement
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Announcement.yml#/Announcement
+get:
+  tags:
+  - places
+  operationId: getPlaceAnnouncements
+  description: Return a paginated list of announcements related to the specified place.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: activeOnly
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Announcement.yml#/Announcement

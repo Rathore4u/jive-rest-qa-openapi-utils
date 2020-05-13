@@ -1,0 +1,28 @@
+---
+get:
+  tags:
+  - places
+  operationId: getTrendingPlaces
+  description: Return a list of trending places. This feature is only available when
+    Jive has enabled the recommender. Do a GET to /api/core/v3/metadata/properties/feature.recommender.enabled
+    to figure out whether recommendation service is enabled or not.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+             "$ref": ../models/Place.yml#/Place

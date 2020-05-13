@@ -1,0 +1,52 @@
+---
+post:
+  tags:
+    - publications
+  operationId: createPublication
+  description: Create a new publication owned by the caller, based on the information in the specified Publication
+  parameters:
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Publication.yml#/Publication
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Publication.yml#/Publication
+get:
+  tags:
+    - publications
+  operationId: getPublications
+  description: Get a list of publications
+  parameters:
+    - in: query
+      name: startIndex
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: count
+      required: false
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/PublicationEntities.yml#/PublicationEntities

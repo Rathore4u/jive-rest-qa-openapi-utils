@@ -1,0 +1,29 @@
+---
+post:
+  tags:
+  - share
+  operationId: markRead
+  description: Mark the specified share as having been read.
+  parameters:
+  - in: path
+    name: shareID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - share
+  operationId: markUnread
+  description: Mark the specified share as having not been read.
+  parameters:
+  - in: path
+    name: shareID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

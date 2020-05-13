@@ -1,0 +1,71 @@
+---
+delete:
+  tags:
+  - places
+  operationId: deletePlace
+  description: Delete the specified place.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - places
+  operationId: getPlace
+  description: Return the specified place with the specified fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Place.yml#/Place
+put:
+  tags:
+  - places
+  operationId: updatePlace
+  description: Update an existing place with specified characteristics.
+  parameters:
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Place.yml#/Place
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Place.yml#/Place

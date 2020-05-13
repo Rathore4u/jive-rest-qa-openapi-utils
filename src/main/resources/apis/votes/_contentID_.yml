@@ -1,0 +1,43 @@
+---
+post:
+  tags:
+  - votes
+  operationId: castVote
+  description: Cast a vote on the specified poll. Some polls allow multiple votes
+    or a single vote.
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - votes
+  operationId: getVotes
+  description: Return the number of votes cast for each poll option.
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": "../models/VoteCount.yml#/VoteCount"

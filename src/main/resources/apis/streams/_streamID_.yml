@@ -1,0 +1,67 @@
+---
+delete:
+  tags:
+  - stream
+  operationId: deleteStream
+  description: Delete an existing custom stream.
+  parameters:
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - stream
+  operationId: getStream
+  description: Return a Stream representation of the specified stream.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Stream.yml#/Stream"
+put:
+  tags:
+  - stream
+  operationId: updateStream
+  description: Update an existing custom stream, based on the information in the specified
+    Stream. Then, return a Stream reflecting the updated stream configuration.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: streamID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/Stream.yml#/Stream"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Stream.yml#/Stream"

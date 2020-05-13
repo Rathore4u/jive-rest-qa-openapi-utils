@@ -1,0 +1,38 @@
+---
+get:
+  tags:
+  - search
+  operationId: searchTags
+  description: Search for and return tags that match the specified filter criteria.
+    When calling this endpoint, you must specify a search filter with at least one
+    keyword.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: origin
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/ContentTag.yml#/ContentTag

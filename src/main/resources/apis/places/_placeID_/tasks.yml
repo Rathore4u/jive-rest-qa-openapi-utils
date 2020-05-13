@@ -1,0 +1,70 @@
+---
+post:
+  tags:
+  - places
+  operationId: createPlaceTask
+  description: Create a Task in a project.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Task.yml#/Task
+  responses:
+    '201':
+      description: Success
+get:
+  tags:
+  - places
+  operationId: getPlaceTasks
+  description: Return a paginated list of tasks created for the specified project.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Task.yml#/Task

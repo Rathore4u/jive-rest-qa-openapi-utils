@@ -1,0 +1,49 @@
+---
+get:
+  tags:
+  - places
+  operationId: getPlaceSettings
+  description: Return settings for a specified place, which can be modified by a place
+    admin. Currently settings for Activity and Overview tab visibility are supported.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Settings.yml#/Settings
+put:
+  tags:
+  - places
+  operationId: updatePlaceSettings
+  description: Updates settings for a specified place. Only a place admin may do this.
+    Currently settings for Activity and Overview tab visibility are supported.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Settings.yml#/Settings
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Settings.yml#/Settings

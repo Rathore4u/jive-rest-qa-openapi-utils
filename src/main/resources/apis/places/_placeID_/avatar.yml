@@ -1,0 +1,65 @@
+---
+post:
+  tags:
+  - places
+  operationId: createPlaceAvatar
+  description: Register a new avatar image (or replace an existing one) from the specified
+    URI. The image will be downloaded and scaled as necessary. Note that avatar images
+    are not supported on blogs.
+  parameters:
+  - in: query
+    name: uri
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '201':
+      description: Success when created
+    '204':
+      description: Success when already there
+delete:
+  tags:
+  - places
+  operationId: deletePlaceAvatar
+  description: Delete the existing avatar image for the specified place. Note that
+    avatar images are not supported on blogs.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: successfull
+get:
+  tags:
+  - places
+  operationId: getPlaceAvatar
+  description: Return the binary content of the avatar image for the specified place.
+    Note that avatar images are not supported on blogs.
+  parameters:
+  - in: query
+    name: size
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+

@@ -1,0 +1,75 @@
+---
+post:
+  tags:
+  - places
+  operationId: createExtPropsForAddon
+  description: For the specified addon, save a new set of extended properties for
+    a place with specified characteristics, and return an entity representing the
+    newly created extended properties.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/ExtProps.yml#/ExtProps
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps
+delete:
+  tags:
+  - places
+  operationId: deleteExtPropsForAddon
+  description: For the specified add-on, delete the existing extended properties for
+    the specified place.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - places
+  operationId: getExtPropsForAddOn
+  description: For the specified add-on, return the specified extended properties
+    of a place.
+  parameters:
+  - in: path
+    name: placeID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: addonUUID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps

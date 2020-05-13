@@ -1,0 +1,19 @@
+---
+get:
+  tags:
+  - places
+  operationId: getRootSpace
+  description: Return the root space for this Jive instance.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Place.yml#/Place

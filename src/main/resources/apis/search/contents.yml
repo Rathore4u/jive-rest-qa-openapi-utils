@@ -1,0 +1,80 @@
+---
+get:
+  tags:
+  - search
+  operationId: searchContents
+  description: Search for and return content objects that match the specified filter
+    criteria, in the specified order.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  - in: query
+    name: directive
+    required: false
+    schema:
+      type: array
+      items:
+        type: object
+  - in: query
+    name: collapse
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: highlight
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: socialSearch
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: returnScore
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: origin
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: includeCategoryFacets
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ContentEntities.yml#/ContentEntities

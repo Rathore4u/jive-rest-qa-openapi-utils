@@ -1,0 +1,26 @@
+---
+post:
+  tags:
+  - securityGroups
+  operationId: createSecurityGroup
+  description: Create and return a security group based on the specified security
+    group entity.  Upon success, return a security group entity representing the new
+    security group with all available fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/SecurityGroup.yml#/SecurityGroup"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/SecurityGroup.yml#/SecurityGroup"

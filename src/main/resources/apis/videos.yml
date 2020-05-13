@@ -1,0 +1,24 @@
+---
+post:
+  tags:
+  - videos
+  operationId: uploadVideo
+  description: Upload a video as a multipart/form-data request body, pass it to the
+    video provider, and return a 201 (Accepted) status.
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            file:
+              type: string
+              format: binary
+  parameters: 
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Video.yml#/Video

@@ -1,0 +1,11 @@
+---
+post:
+  tags:
+  - search
+  operationId: logSearchQuery
+  description: Internal REST endpoint for logging Jive user interactions with the
+    Search UI in JSON format
+  parameters: 
+  responses:
+    '200':
+      description: Success

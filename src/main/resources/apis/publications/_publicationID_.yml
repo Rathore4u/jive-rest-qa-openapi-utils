@@ -1,0 +1,67 @@
+---
+get:
+  tags:
+    - publications
+  description: Return a Publication representation of the specified publication
+  operationId: getPublication
+  parameters:
+    - in: path
+      name: publicationID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Publication.yml#/Publication
+put:
+  tags:
+    - publications
+  description: Update an existing publication, based on the information in the specified Publication
+  operationId: updatePublication
+  parameters:
+    - in: path
+      name: publicationID
+      required: true
+      schema:
+        type: string
+    - in: query
+      name: fields
+      required: false
+      description: Fields to be included in the response
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Publication.yml#/Publication
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Publication.yml#/Publication
+delete:
+  tags:
+    - publications
+  operationId: deletePublication
+  description: Delete an existing publication
+  parameters:
+    - in: path
+      name: publicationID
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      description: Success

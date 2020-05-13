@@ -1,0 +1,10 @@
+---
+post:
+  tags:
+  - videos
+  operationId: getUploadConfig
+  description: Return an upload configuration to use with the Perceptive uploader.
+  parameters: 
+  responses:
+    '200':
+      description: Success
