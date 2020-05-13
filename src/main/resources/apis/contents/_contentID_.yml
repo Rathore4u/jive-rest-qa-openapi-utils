@@ -1,0 +1,107 @@
+---
+get:
+  tags:
+  - content
+  description: Return the specified content object with the specified fields.
+  operationId: getContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    description: Boolean indicating whether a soft or hard delete should be performed.
+      Only used for content that supports hard/soft deletes (default is false). Ignored
+      otherwise. Since 3.10.
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    description: Flag indicating that if content.text is requested, it will be abridged
+      (length shortened, HTML tags removed)
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content
+put:
+  tags:
+  - content
+  description: Update an existing content with specified characteristics.
+  operationId: updateContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    description: Flag indicating that if content.text is requested, it will be abridged
+      (length shortened, HTML tags removed)
+    schema:
+      type: boolean
+  - in: query
+    name: minor
+    required: false
+    description: Flag indicating whether this update is a minor edit (true) or not
+      (false)
+    schema:
+      type: boolean
+  - in: query
+    name: updated
+    required: false
+    description: Date and time when this content object was most recently updated.
+      Only set this field when importing content. Since 3.6.
+    schema:
+      type: string
+      format: date-time
+  - in: query
+    name: fields
+    required: false
+    description: Fields to include in the returned entity
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Content.yml#/Content
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content
+delete:
+  tags:
+  - content
+  description: Delete the specified content object.
+  operationId: deleteContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: hardDelete
+    required: false
+    description: Boolean indicating whether a soft or hard delete should be performed.
+      Only used for content that supports hard/soft deletes (default is false). Ignored
+      otherwise. Since 3.10.
+    schema:
+      type: boolean
+  responses:
+    '204':
+      description: Success

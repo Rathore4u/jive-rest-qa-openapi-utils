@@ -1,0 +1,29 @@
+---
+post:
+  tags:
+  - announcements
+  operationId: markRead
+  description: Mark the specified announcement as having been read.
+  parameters:
+  - in: path
+    name: announcementID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - announcements
+  operationId: markUnread
+  description: Mark the specified announcement as having not been read.
+  parameters:
+  - in: path
+    name: announcementID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

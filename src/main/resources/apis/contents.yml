@@ -1,0 +1,114 @@
+---
+get:
+  tags:
+  - content
+  description: Return a paginated list of content objects that match the specified
+    filter criteria. This service supports the following filters. Parameters, when
+    used, should be wrapped in parentheses, and multiple values separated by commas.
+  operationId: getContents
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: sort
+    required: false
+    schema:
+      type: string
+      enum:
+      - dateCreatedAsc
+      - dateCreatedDesc
+      - latestActivityAsc
+      - latestActivityDesc
+      - titleAsc
+  - in: query
+    name: includeBlogs
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content
+post:
+  tags:
+  - content
+  parameters:
+  - in: query
+    name: published
+    description: Date and time when this content object was originally created. Set
+      'updated' param as well. Only set this field when importing content. Since 3.6.
+    required: false
+    schema:
+      type: string
+      format: date-time
+  - in: query
+    name: updated
+    description: Date and time when this content object was most recently updated.
+      Set 'published' param as well. Only set this field when importing content. Since
+      3.6.
+    required: false
+    schema:
+      type: string
+      format: date-time
+  - in: query
+    name: fields
+    description: The fields to include in the returned entity
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          properties:
+            content:
+              $ref: ../models/Content.yml#/Content
+            file:
+              type: string
+              format: binary
+    description: The new content to create
+    required: true
+  description: Create a new content object with specified characteristics, and return
+    an entity representing the newly created content object. For those types of content
+    that support attachments, it is possible to specify URL of files that the server
+    will download and store them as attachments of the new content. A BAD_REQUEST
+    error will be returned if URL of files are passed and the content type does not
+    support attachments. Here we can see an example where attachments are specified
+    as URLs.
+  operationId: createContent
+  responses:
+    '201':
+      description: Request was successful
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content

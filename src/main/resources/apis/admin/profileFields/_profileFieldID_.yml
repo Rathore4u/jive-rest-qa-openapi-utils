@@ -1,0 +1,67 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProfileField
+  tags: [admin]
+  parameters:
+  - name: profileFieldID
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ProfileField.yml#/ProfileField"
+put:
+  summary: ''
+  description: ''
+  operationId: updateProfileField
+  tags: [admin]
+  parameters:
+  - name: profileFieldID
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/ProfileField.yml#/ProfileField"
+  responses:
+    default:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ProfileField.yml#/ProfileField"
+delete:
+  summary: ''
+  description: ''
+  operationId: deleteProfileField
+  tags: [admin]
+  parameters:
+  - name: profileFieldID
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

@@ -1,0 +1,31 @@
+---
+post:
+  tags:
+  - content
+  description: Register that the requesting person considers the specified content
+    helpful.
+  operationId: contentUnhelpfull
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - content
+  description: Delete the registration of the specified content as unhelpful by the
+    requesting user.
+  operationId: deleteContentUnhelpfull
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

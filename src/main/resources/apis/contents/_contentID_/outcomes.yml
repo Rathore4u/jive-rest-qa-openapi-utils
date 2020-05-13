@@ -1,0 +1,57 @@
+---
+get:
+  tags:
+  - content
+  description: Return a paginated list of the Outcomes for the specified content.
+  operationId: getOutcomes
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/OutcomeEntities.yml#/OutcomeEntities
+post:
+  tags:
+  - content
+  description: Create the outcome on the specified content
+  operationId: createOutcome
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/OutcomeBase.yml#/OutcomeBase
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/OutcomeBase.yml#/OutcomeBase

@@ -1,0 +1,40 @@
+---
+get:
+  tags:
+  - content
+  description: Return a paginated list of the possible OutcomeTypes for the children
+    of the specified object.
+  operationId: childOutcomeTypes
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: isCreate
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/OutcomeTypeEntities.yml#/OutcomeTypeEntities

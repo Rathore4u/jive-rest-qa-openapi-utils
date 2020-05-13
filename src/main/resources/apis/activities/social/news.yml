@@ -1,0 +1,29 @@
+---
+get:
+  tags:
+  - activities
+  operationId: getSocialNews
+  description: Return a paginated list of social news for the authenticated user.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: before
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ActivityEntities.yml#/ActivityEntities"

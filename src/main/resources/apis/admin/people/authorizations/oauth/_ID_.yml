@@ -1,0 +1,39 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getAuthorization
+  tags: [admin]
+  parameters:
+  - name: ID
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/AuthorizationEntity.yml#/AuthorizationEntity"
+delete:
+  summary: ''
+  description: ''
+  operationId: deleteAuthorization
+  tags: [admin]
+  parameters:
+  - name: ID
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

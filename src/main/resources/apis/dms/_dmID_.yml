@@ -1,0 +1,38 @@
+---
+delete:
+  tags:
+  - direct-message
+  operationId: deleteDirectMessage
+  description: Delete the specified direct message.
+  parameters:
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+get:
+  tags:
+  - direct-message
+  operationId: getDirectMessage
+  description: Retrieve and return the specified direct message.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/DirectMessage.yml#/DirectMessage

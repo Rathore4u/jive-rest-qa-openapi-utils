@@ -1,0 +1,29 @@
+---
+post:
+  tags:
+  - direct-message
+  operationId: markRead
+  description: Mark the specified direct message as having been read.
+  parameters:
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+delete:
+  tags:
+  - direct-message
+  operationId: markUnread
+  description: Mark the specified direct message as having not been read.
+  parameters:
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

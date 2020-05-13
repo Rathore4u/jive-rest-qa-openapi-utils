@@ -1,0 +1,41 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createComment
+  description: Create a new comment with the specified characteristics.  The parent
+    field must contain the URI of either a content object for which this is a direct
+    reply, or the URI of a previous comment to which this is a reply.
+  parameters:
+  - in: query
+    name: author
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Comment.yml#/Comment
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment

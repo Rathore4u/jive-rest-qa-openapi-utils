@@ -1,0 +1,44 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createAbuseReport
+  description: Register that the requesting person considers the specified comment
+    as abusive. See AbuseReport for an example.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/AbuseReport.yml#/AbuseReport
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getAbuseReports
+  description: Retrieve the abuse reports for the specified comment
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+              $ref: ../models/AbuseReportEntities.yml#/AbuseReportEntities

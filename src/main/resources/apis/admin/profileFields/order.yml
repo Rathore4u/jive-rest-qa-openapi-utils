@@ -1,0 +1,9 @@
+---
+put:
+  summary: ''
+  description: ''
+  operationId: updateOrder
+  tags: [admin]
+  responses:
+    default:
+      description: successful operation

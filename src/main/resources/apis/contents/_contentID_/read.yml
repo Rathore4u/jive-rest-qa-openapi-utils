@@ -1,0 +1,29 @@
+---
+delete:
+  tags:
+  - content
+  description: Mark the specified content object as having not been read.
+  operationId: unmarkAsRead
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+post:
+  tags:
+  - content
+  description: Mark the specified content object as having been read.
+  operationId: markAsRead
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

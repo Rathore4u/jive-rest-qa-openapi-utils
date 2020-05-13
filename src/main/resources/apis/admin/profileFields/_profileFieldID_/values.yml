@@ -1,0 +1,39 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProfileFieldValues
+  tags: [admin]
+  parameters:
+  - name: profileFieldID
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: count
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 200
+  - name: startIndex
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 0
+  - name: sort
+    in: query
+    required: false
+    schema:
+      type: string
+      default: desc
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ProfileFieldValueCountEntities.yml#/ProfileFieldValueCountEntities"

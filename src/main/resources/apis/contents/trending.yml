@@ -1,0 +1,40 @@
+---
+get:
+  tags:
+  - content
+  description: Return a list of trending content objects that match the specified
+    filter criteria. It's possible for some Jive instances to have recommendation
+    disabled, for these cases use getPopularContent(fields, abridged) instead. Do
+    a GET to /api/core/v3/metadata/properties/feature.recommender.enabled to figure
+    out whether recommendation service is enabled or not.
+  operationId: getTrendingContents
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content

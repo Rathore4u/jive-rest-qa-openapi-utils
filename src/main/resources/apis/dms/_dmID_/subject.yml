@@ -1,0 +1,33 @@
+---
+post:
+  tags:
+  - direct-message
+  operationId: setSubject
+  description: 'Changes the subject (text) of the specified direct message. This endpoint
+    accepts a JSON representation like this:'
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            subject:
+              type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/DirectMessage.yml#/DirectMessage

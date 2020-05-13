@@ -1,0 +1,60 @@
+---
+get:
+  tags:
+  - content
+  description: Return the list of custom streams in which the requesting user is following
+    this content object.
+  operationId: getContentFollowingIn
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Stream.yml#/Stream
+post:
+  tags:
+  - content
+  description: Replace the list of Streams in which the requesting user is following
+    this content object.
+  operationId: putContentFollowingIn
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            "$ref": ../models/Stream.yml#/Stream
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Stream.yml#/Stream

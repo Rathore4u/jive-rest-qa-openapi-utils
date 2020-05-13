@@ -1,0 +1,34 @@
+---
+get:
+  tags:
+  - content
+  description: Return a list of recommended content objects for the authenticated
+    user. When recommender service is not enabled in the Jive instance then predefined
+    recommended content is going to be returned instead. Do a GET to /api/core/v3/metadata/properties/feature.recommender.enabled
+    to figure out whether recommendation service is enabled or not.
+  operationId: getRecommendedContents
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content

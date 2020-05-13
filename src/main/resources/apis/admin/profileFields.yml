@@ -1,0 +1,59 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProfileFields
+  tags: [admin]
+  parameters:
+  - name: count
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 25
+  - name: startIndex
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 0
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  - name: profileFieldName
+    in: query
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ProfileFieldEntities.yml#/ProfileFieldEntities"
+post:
+  summary: ''
+  description: ''
+  operationId: createProfileField
+  tags: [admin]
+  parameters:
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/ProfileField.yml#/ProfileField
+  responses:
+    default:
+      description: successful operation

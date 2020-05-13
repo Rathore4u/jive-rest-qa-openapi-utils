@@ -1,0 +1,94 @@
+---
+get:
+  tags:
+  - comments
+  operationId: getEditableComment
+  description: Return the specified editable content object with the specified fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+post:
+  tags:
+  - comments
+  operationId: lockEditableComment
+  description: Attempt to lock the specified comment for editing.  This method will
+    not fail if the comment is already locked.  Check the 'editingBy' field in returned
+    entity to see who owns the lock.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - comments
+  operationId: unlockEditableComment
+  description: Attempt to unlock the specified comment for editing.  This method will
+    not fail if the comment is not locked or the lock is owned by another user. Check
+    the 'editingBy' field in returned entity to see who owns the lock.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+put:
+  tags:
+  - comments
+  operationId: updateEditableComment
+  description: Update the specified editable comment with the specified characteristics.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment

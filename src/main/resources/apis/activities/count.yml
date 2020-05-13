@@ -1,0 +1,26 @@
+---
+get:
+  tags:
+  - activities
+  operationId: getCount
+  description: Return count of new activities for the given user since the provided
+    time.
+  parameters:
+  - in: query
+    name: after
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: max
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: exclude
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success

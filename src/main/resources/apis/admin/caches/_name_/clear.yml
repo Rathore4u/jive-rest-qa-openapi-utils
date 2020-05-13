@@ -1,0 +1,15 @@
+---
+post:
+  summary: ''
+  description: ''
+  operationId: clearCache
+  tags: [admin]
+  parameters:
+  - name: name
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

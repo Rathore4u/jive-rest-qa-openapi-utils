@@ -1,0 +1,86 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createReply
+  description: Create a new comment as a reply to an existing comment with the specified
+    characteristics.
+  parameters:
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Comment.yml#/Comment
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+get:
+  tags:
+  - comments
+  operationId: getComments
+  description: Return a paginated list of comments to the specified content object,
+    optionally limiting the returned results to direct replies only.  The specified
+    content object type must support comments, or be a comment itself (in which case
+    replies to this comment only are returned).
+  parameters:
+  - in: query
+    name: excludeReplies
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: anchor
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/CommentEntities.yml#/CommentEntities

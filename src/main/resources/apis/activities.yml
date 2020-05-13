@@ -1,0 +1,76 @@
+---
+post:
+  tags:
+  - activities
+  operationId: createActivity
+  description: Create a new activity stream entry based on the characteristics in
+    the incoming activity object.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": "../models/Activity.yml#/Activity"
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/Activity.yml#/Activity"
+get:
+  tags:
+  - activities
+  operationId: getActivity
+  description: Return the specified activities from the stream of all activity visible
+    to the requesting person.
+  parameters:
+  - in: query
+    name: after
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: before
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: array
+      items:
+        type: object
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: collapse
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: oldestUnread
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ActivityEntities.yml#/ActivityEntities"

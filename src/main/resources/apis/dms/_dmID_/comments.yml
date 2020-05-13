@@ -1,0 +1,110 @@
+---
+post:
+  tags:
+  - direct-message
+  operationId: createComment
+  description: Create a new comment as a reply to the specified direct message.  The
+    parent field (if any) in the incoming entity will be ignored.  Instead, it will
+    be set to the URI of the specified direct message.
+  parameters:
+  - in: query
+    name: sendEmails
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: authorID
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Comment.yml#/Comment
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+get:
+  tags:
+  - direct-message
+  operationId: getComments
+  description: Return a paginated list of comments to the specified directMessage,
+    optionally limiting the returned results to direct replies only.
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    explode: true
+    schema:
+      type: array
+      items:
+        type: string
+  - in: query
+    name: excludeReplies
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: hierarchical
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: anchor
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../models/DirectMessage.yml#/DirectMessage

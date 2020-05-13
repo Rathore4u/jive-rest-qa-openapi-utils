@@ -1,0 +1,21 @@
+---
+get:
+  tags:
+  - content
+  description: Return the binary content of the specified file (returns ConflictException
+    on any other content object type).
+  operationId: getContentData
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/binary:
+          schema:
+            type: string
+            format: binary

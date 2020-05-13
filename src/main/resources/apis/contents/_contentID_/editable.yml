@@ -1,0 +1,112 @@
+---
+get:
+  tags:
+  - content
+  description: Return the specified editable content object with the specified fields.
+    This API is useful for clients that use an RTE like editor to render the content
+    body. The returned content body in the JSON will include Jive macros that the
+    RTE will need to understand.
+  operationId: getEditableContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    description: Boolean indicating whether a soft or hard delete should be performed.
+      Only used for content that supports hard/soft deletes (default is false). Ignored
+      otherwise. Since 3.10.
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content
+put:
+  tags:
+  - content
+  description: Update an existing content with editable content and specified characteristics.
+    The returned content body in the JSON will include Jive macros that the RTE will
+    need to understand. The input JSON must include a true value in content.editable
+    if the content body is using RTE macros.
+  operationId: updateEditableContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    description: Flag indicating that if content.text is requested, it will be abridged
+      (length shortened, HTML tags removed)
+    schema:
+      type: boolean
+  - in: query
+    name: minor
+    required: false
+    description: Flag indicating whether this update is a minor edit (true) or not
+      (false)
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    description: Fields to include in the returned entity
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/Content.yml#/Content
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/Content.yml#/Content
+delete:
+  tags:
+  - content
+  description: Unlock the specified content object.
+  operationId: unlockContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success
+post:
+  tags:
+  - content
+  description: Attempt to lock the specified content for editing. This method will
+    not fail if the content is already locked. Check the 'editingBy' field in returned
+    entity to see who owns the lock.
+  operationId: lockContent
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    description: Fields to include in the returned entity
+    schema:
+      type: string
+  responses:
+    '204':
+      description: Success

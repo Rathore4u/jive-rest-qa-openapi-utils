@@ -1,0 +1,58 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createCommentLike
+  description: Register that the requesting person likes the specified comment.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - comments
+  operationId: deleteCommentLike
+  description: Delete the like of the specified content object by the requesting user.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getCommentLikes
+  description: Return a paginated list of the people who like the specified comment.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

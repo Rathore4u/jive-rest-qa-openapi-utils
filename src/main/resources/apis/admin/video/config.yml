@@ -1,0 +1,76 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: get
+  tags: [admin]
+  responses:
+    default:
+      description: successful operation
+post:
+  summary: ''
+  description: ''
+  operationId: post
+  tags: [admin]
+  parameters:
+  - name: accountKey
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: accountName
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: libraryName
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: accountStatus
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: cloudState
+    in: query
+    required: false
+    schema:
+      type: string
+  - name: sfdcContractID
+    in: query
+    required: false
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation
+put:
+  summary: ''
+  description: ''
+  operationId: put
+  tags: [admin]
+  parameters:
+  - name: accountKey
+    in: query
+    required: false
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation
+delete:
+  summary: ''
+  description: ''
+  operationId: delete
+  tags: [admin]
+  parameters:
+  - name: accountKey
+    in: query
+    required: false
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

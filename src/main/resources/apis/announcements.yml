@@ -1,0 +1,63 @@
+---
+post:
+  tags:
+  - announcements
+  operationId: createAnnouncement
+  description: Create a new announcement with the specified characteristics.
+  parameters:
+  - in: query
+    name: minor
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/Announcement.yml#/Announcement
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Announcement.yml#/Announcement
+get:
+  tags:
+  - announcements
+  operationId: getSystemAnnouncements
+  description: Return a paginated list of system announcements that are currently
+    viewable.
+  parameters:
+  - in: query
+    name: activeOnly
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/AnnouncementEntities.yml#/AnnouncementEntities

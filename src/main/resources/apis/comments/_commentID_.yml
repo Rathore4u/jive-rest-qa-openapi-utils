@@ -1,0 +1,81 @@
+---
+delete:
+  tags:
+  - comments
+  operationId: deleteComment
+  description: 'Delete the specified comment and sub comments recursively.  '
+  parameters:
+  - in: query
+    name: recursiveDelete
+    required: false
+    schema:
+      type: boolean
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getComment
+  description: Return the specified content object with the specified fields.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+put:
+  tags:
+  - comments
+  operationId: updateComment
+  description: Update the specified comment with the specified characteristics.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/Comment.yml#/Comment

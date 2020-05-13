@@ -1,0 +1,54 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createExtendedProperties
+  description: Save a new set of extended properties for a comment, and return an
+    entity representing the newly created extended properties.  Any previous extended
+    properties for this comment will be completely replaced.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/ExtProps.yml#/ExtProps
+delete:
+  tags:
+  - comments
+  operationId: deleteExtendedProperties
+  description: Delete the existing extended properties for the specified comment.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getExtendedProperties
+  description: Return the extended properties for the specified comment.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/ExtProps.yml#/ExtProps

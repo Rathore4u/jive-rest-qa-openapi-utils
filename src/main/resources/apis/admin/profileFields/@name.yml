@@ -1,0 +1,34 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProfileFieldName
+  tags: [admin]
+  parameters:
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/ProfileFieldNameEntity.yml#/ProfileFieldNameEntity"
+put:
+  summary: ''
+  description: ''
+  operationId: updateProfileFieldNAme
+  tags: [admin]
+  parameters:
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

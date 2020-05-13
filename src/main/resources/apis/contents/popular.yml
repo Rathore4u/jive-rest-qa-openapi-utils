@@ -1,0 +1,28 @@
+---
+get:
+  tags:
+  - content
+  description: Return a list of popular content objects for the authenticated user.
+    Use this service when recommendation is disabled. Do a GET to /api/core/v3/metadata/properties/feature.recommender.enabled
+    to figure out whether recommendation service is enabled or not.
+  operationId: getPopularContent
+  parameters:
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Content.yml#/Content

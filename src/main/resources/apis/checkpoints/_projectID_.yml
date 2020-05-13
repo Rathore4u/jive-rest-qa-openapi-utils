@@ -1,0 +1,64 @@
+---
+get:
+  tags:
+    - checkpoint
+  operationId: getCheckPoints
+  description: Return the checkpoints for the specified project.
+  parameters:
+    - in: query
+      name: count
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: startIndex
+      required: false
+      schema:
+        type: integer
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: path
+      name: projectID
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/CheckpointEntities.yml#/CheckpointEntities
+post:
+  tags:
+    - checkpoint
+  operationId: setCheckPoints
+  description: Sets the checkpoints for the specified project. The list field must
+    be an array of objects describing the complete list of checkpoints to apply to
+    the project.
+  parameters:
+    - in: query
+      name: fields
+      required: false
+      schema:
+        type: string
+    - in: path
+      name: projectID
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/SetCheckpoints.yml#/SetCheckpoints
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/CheckpointEntities.yml#/CheckpointEntities

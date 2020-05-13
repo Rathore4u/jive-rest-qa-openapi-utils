@@ -1,0 +1,32 @@
+---
+get:
+  tags:
+  - content
+  description: Retrieve entitlements for the specified user, granted for the specified
+    content object.
+  operationId: getEntitlementsForPerson
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: path
+    name: personID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Entitlement.yml#/Entitlement

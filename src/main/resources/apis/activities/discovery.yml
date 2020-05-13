@@ -1,0 +1,20 @@
+---
+get:
+  tags:
+  - activities
+  operationId: getDiscoveryChannel
+  description: Return the discovery stream, containing recommended, trending, and
+    matters most items.
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/PlaceEntities.yml#/PlaceEntities"

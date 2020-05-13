@@ -1,0 +1,58 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProperties
+  tags: [admin]
+  parameters:
+  - name: startIndex
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 0
+  - name: count
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 25
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    default:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../models/JivePropertyEntityEntities.yml#/JivePropertyEntityEntities
+post:
+  summary: ''
+  description: ''
+  operationId: createProperty
+  tags: [admin]
+  parameters:
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/JivePropertyEntity.yml#/JivePropertyEntity
+  responses:
+    default:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../models/JivePropertyEntity.yml#/JivePropertyEntity

@@ -1,0 +1,36 @@
+---
+post:
+  tags:
+  - direct-message
+  operationId: addParticipants
+  description: Add a list of new participants to an existing direct message.
+  parameters:
+  - in: query
+    name: sendEmails
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: dmID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+            type: array
+            items:
+              type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/DirectMessage.yml#/DirectMessage

@@ -1,0 +1,37 @@
+---
+get:
+  tags:
+  - content
+  description: Return a paginated list of Persons about people who are following the
+    specified content.
+  operationId: getContentFollowers
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              "$ref": ../models/Person.yml#/Person

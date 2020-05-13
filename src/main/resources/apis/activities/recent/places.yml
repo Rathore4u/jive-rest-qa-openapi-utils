@@ -1,0 +1,25 @@
+---
+get:
+  tags:
+  - activities
+  operationId: getRecentPlaces
+  description: Return the most recently viewed places that are visible to the requesting
+    person.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/PlaceEntities.yml#/PlaceEntities"

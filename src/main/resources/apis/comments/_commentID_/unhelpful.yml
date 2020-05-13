@@ -1,0 +1,60 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createCommentUnhelpful
+  description: Register that the requesting person considers the specified comment
+    unhelpful.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - comments
+  operationId: deleteCommentUnhelpful
+  description: Delete the registration of the specified comment as unhelpful by the
+    requesting user.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getHaveMarkedUnhelpful
+  description: Return a paginated list of the people who consider this comment unhelpful.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

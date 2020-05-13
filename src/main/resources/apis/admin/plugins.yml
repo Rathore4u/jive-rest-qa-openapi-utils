@@ -1,0 +1,20 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getPlugins
+  tags: [admin]
+  parameters:
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/PluginEntities.yml#/PluginEntities"

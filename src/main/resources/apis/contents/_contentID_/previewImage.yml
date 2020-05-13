@@ -1,0 +1,43 @@
+---
+get:
+  tags:
+  - content
+  description: Return a preview image that represents a content item. If returnDefaultImageWhenNoPreviewAvailable
+    is true and no preview exists for the specified content item, a default preview
+    image will be displayed. For content created in a place, the default image will
+    represent the place where the content was created. For personal content, the default
+    image will represent the creator of the content item. If false, a not found response
+    will be returned if no preview is available for the content. Defaults to false,
+    if no value for this param is provided.
+  operationId: getPreviewImage
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: returnDefaultImageWhenNoPreviewAvailable
+    required: false
+    description: Preferred size
+    schema:
+      type: boolean
+  - in: query
+    name: size
+    required: false
+    description: Preferred size
+    schema:
+      type: string
+      enum:
+      - original
+      - small
+      - medium
+      - large
+  responses:
+    '200':
+      description: Success
+      content:
+        application/binary:
+          schema:
+            type: string
+            format: binary

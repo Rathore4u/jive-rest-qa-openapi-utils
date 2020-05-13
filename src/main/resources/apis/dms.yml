@@ -1,0 +1,46 @@
+---
+post:
+  tags:
+  - direct-message
+  operationId: createDirectMessage
+  description: Create a new direct message based on the specified fields. Uploaded
+    files will be added to the new direct message as attachments. Attachments can
+    only be images. Those images will be accessible through the images resource.
+  parameters:
+  - in: query
+    name: sendEmails
+    required: false
+    schema:
+      type: boolean
+  - in: query
+    name: authorID
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: published
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: updated
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/DirectMessageRequest.yml#/DirectMessageRequest
+  responses:
+    '201':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/DirectMessage.yml#/DirectMessage

@@ -1,0 +1,30 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getCaches
+  tags: [admin]
+  parameters:
+  - name: startIndex
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 0
+  - name: count
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 25
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    default:
+      description: successful operation

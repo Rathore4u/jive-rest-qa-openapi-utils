@@ -1,0 +1,58 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createOutcome
+  description: ''
+  parameters:
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/OutcomeBase.yml#/OutcomeBase
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getOutcomes
+  description: Return a paginated list of the outcomes for the specified comment.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../models/OutcomeEntities.yml#/OutcomeEntities

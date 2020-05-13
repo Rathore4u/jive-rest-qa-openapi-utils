@@ -1,0 +1,60 @@
+---
+post:
+  tags:
+  - comments
+  operationId: createCommentHelpful
+  description: Register that the requesting person considers the specified comment
+    helpful.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+delete:
+  tags:
+  - comments
+  operationId: deleteCommentHelpful
+  description: Delete the helpful mark of the specified comment by the requesting
+    user.
+  parameters:
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success
+get:
+  tags:
+  - comments
+  operationId: getHaveMarkedHelpful
+  description: Return a paginated list of the people who consider this comment helpful.
+  parameters:
+  - in: query
+    name: startIndex
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: path
+    name: commentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Success

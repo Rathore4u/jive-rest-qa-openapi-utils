@@ -1,0 +1,39 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getAuthorizations
+  tags: [admin]
+  parameters:
+  - name: personID
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: startIndex
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 0
+  - name: count
+    in: query
+    required: false
+    schema:
+      type: integer
+      format: int32
+      default: 25
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/AuthorizationEntityEntities.yml#/AuthorizationEntityEntities"

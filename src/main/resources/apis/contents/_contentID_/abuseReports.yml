@@ -1,0 +1,46 @@
+---
+get:
+  tags:
+  - content
+  description: Retrieve the abuse reports for the specified content.
+  operationId: abuseReports
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+              "$ref": ../models/AbuseReportEntities.yml#/AbuseReportEntities
+post:
+  operationId: createAbuseReports
+  tags:
+    - content
+  parameters:
+    - name: contentID
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/AbuseReport.yml#/AbuseReport
+  responses:
+    default:
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/AbuseReport.yml#/AbuseReport

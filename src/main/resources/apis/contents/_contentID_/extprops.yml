@@ -1,0 +1,57 @@
+---
+get:
+  tags:
+  - content
+  description: Return the specified extended properties of a content.
+  operationId: getExtraProps
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps
+post:
+  tags:
+  - content
+  description: Register that the requesting person considers the specified content
+    helpful.
+  operationId: createExtraProps
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          "$ref": ../models/ExtProps.yml#/ExtProps
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            "$ref": ../models/ExtProps.yml#/ExtProps
+delete:
+  tags:
+  - content
+  description: Delete the existing extended properties for the specified content.
+  operationId: deleteExtraProps
+  parameters:
+  - in: path
+    name: contentID
+    required: true
+    schema:
+      type: string
+  responses:
+    '200':
+      description: Created

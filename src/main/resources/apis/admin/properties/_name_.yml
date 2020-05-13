@@ -1,0 +1,68 @@
+---
+get:
+  summary: ''
+  description: ''
+  operationId: getProperty
+  tags: [admin]
+  parameters:
+  - name: name
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/JivePropertyEntity.yml#/JivePropertyEntity"
+put:
+  summary: ''
+  description: ''
+  operationId: updateProperty
+  tags: [admin]
+  parameters:
+  - name: name
+    in: path
+    required: true
+    schema:
+      type: string
+  - name: fields
+    in: query
+    required: false
+    schema:
+      type: string
+      default: "@all"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../models/JivePropertyEntity.yml#/JivePropertyEntity
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/JivePropertyEntity.yml#/JivePropertyEntity"
+delete:
+  summary: ''
+  description: ''
+  operationId: deleteProperty
+  tags: [admin]
+  parameters:
+  - name: name
+    in: path
+    required: true
+    schema:
+      type: string
+  responses:
+    default:
+      description: successful operation

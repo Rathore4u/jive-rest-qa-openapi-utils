@@ -1,0 +1,37 @@
+---
+get:
+  tags:
+  - activities
+  operationId: getFrequentContent
+  description: Return the most frequently viewed content that is visible to the requesting
+    person.
+  parameters:
+  - in: query
+    name: count
+    required: false
+    schema:
+      type: integer
+  - in: query
+    name: fields
+    required: false
+    schema:
+      type: string
+  - in: query
+    name: filter
+    required: false
+    schema:
+      type: array
+      items:
+        type: object
+  - in: query
+    name: abridged
+    required: false
+    schema:
+      type: boolean
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            "$ref": "../models/GenericEntities.yml#/GenericEntities"
