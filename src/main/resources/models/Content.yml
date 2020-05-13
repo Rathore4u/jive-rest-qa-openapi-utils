@@ -1,0 +1,173 @@
+---
+Content:
+  type: object
+  required:
+  - content
+  properties:
+    type:
+      type: string
+      enum:
+      - discussion
+      - event
+      - image
+      - task
+      - document
+      - favorite
+      - file
+      - generic
+      - poll
+      - post
+      - slide
+      - update
+      - idea
+      - message
+      - dm
+      - project
+      - video
+    answer:
+      type: string
+      description: URI of the correct answer (if any) to this discussion, if it is
+        a question.
+    abuseCount:
+      type: integer
+      description: Number of abuse reports associated with this content object.
+    archived:
+      type: boolean
+      description: Flag indicating that this discussion is archived.
+    attachments:
+      type: array
+      items:
+        "$ref":  ../models/Attachment.yml#/Attachment
+      description: List of attachments to this discussion (if any).
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    categories:
+      type: array
+      items:
+        type: string
+    likeCount:
+      type: integer
+    subject:
+      type: string
+    content:
+      "$ref":  ../models/ContentBody.yml#/ContentBody
+    contentID:
+      type: string
+      description: Internal Jive ID associated with the content.
+    contentImages:
+      type: array
+      description: A list of Image objects providing metadata about images embedded
+        within this content.
+      items:
+        "$ref":  ../models/Image.yml#/Image
+    contentVideos:
+      type: array
+      items:
+        "$ref":  ../models/ContentVideo.yml#/ContentVideo
+    extendedAuthors:
+      type: array
+      items:
+        "$ref":  ../models/Person.yml#/Person
+    favoriteCount:
+      type: integer
+    followerCount:
+      type: integer
+    highlightBody:
+      type: string
+    highlightSubject:
+      type: string
+    highlightTags:
+      type: string
+    iconCss:
+      type: string
+    id:
+      type: string
+    lastActivityDate:
+      type: string
+      format: date-time
+    onBehalfOf:
+      "$ref":  ../models/OnBehalfOf.yml#/OnBehalfOf
+    outcomeCounts:
+      type: object
+      description: "Map of structured outcome type names that have been assigned
+        to this content object, and a count of how many times they appear. For top
+        level content objects like Discussion, Document, File, and Post, outcomes
+        assigned to child comments and messages will also be included."
+      additionalProperties:
+        type: integer
+    outcomeTypeNames:
+      type: array
+      items:
+        type: string
+    outcomeTypes:
+      type: array
+      items:
+        "$ref":  ../models/OutcomeType.yml#/OutcomeType
+    parent:
+      type: string
+    parentContent:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentContentVisible:
+      type: boolean
+    parentPlace:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentVisible:
+      type: boolean
+    published:
+      type: string
+      format: date-time
+    question:
+      type: boolean
+    replyCount:
+      type: integer
+    resolved:
+      type: string
+    resources:
+      $ref: ../models/RestResources.yml#/RestResources
+    restrictReplies:
+      type: boolean
+    sameQuestionCount:
+      type: integer
+    searchRankings:
+      type: object
+      additionalProperties:
+        type: object
+    status:
+      type: string
+      enum:
+      - incomplete
+      - awaiting moderation
+      - pending_approval
+      - scheduled
+      - rejected
+      - published
+      - deleted
+      - processing # video
+    tags:
+      type: array
+      items:
+        type: string
+    updated:
+      type: string
+      format: date-time
+    users:
+      type: array
+      items:
+        "$ref":  ../models/Person.yml#/Person
+    via:
+      "$ref":  ../models/Via.yml#/Via
+    viewCount:
+      type: integer
+    visibility:
+      type: string
+      enum:
+      - all
+      - hidden
+      - people
+      - place
+    visibleToExternalContributors:
+      type: boolean
+    followed:
+      type: boolean
+    promotedResult:
+      type: boolean

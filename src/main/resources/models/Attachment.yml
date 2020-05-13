@@ -1,0 +1,25 @@
+---
+Attachment:
+  type: object
+  properties:
+    contentType:
+      type: string
+    doUpload:
+      type: boolean
+    id:
+      type: string
+    name:
+      type: string
+    size:
+      type: integer
+    status:
+      type: string
+      enum:
+      - incomplete
+      - awaiting moderation
+      - rejected
+      - published
+    url:
+      type: string
+    followed:
+      type: boolean

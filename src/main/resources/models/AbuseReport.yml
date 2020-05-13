@@ -1,0 +1,19 @@
+---
+AbuseReport:
+  type: object
+  properties:
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    category:
+      type: string
+    id:
+      type: string
+    message:
+      type: string
+    object:
+      type: string
+    published:
+      type: string
+      format: date-time
+    type:
+      type: string

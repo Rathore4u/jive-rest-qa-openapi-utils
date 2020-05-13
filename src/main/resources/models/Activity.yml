@@ -1,0 +1,40 @@
+---
+Activity:
+  type: object
+  properties:
+    actor:
+      "$ref":  ../models/PersonActivityObject.yml#/PersonActivityObject
+    content:
+      type: string
+    generator:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    icon:
+      "$ref":  ../models/MediaLink.yml#/MediaLink
+    id:
+      type: string
+    jive:
+      "$ref":  ../models/JiveExtension.yml#/JiveExtension
+    object:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    openSocial:
+      "$ref":  ../models/OpenSocial.yml#/OpenSocial
+    previewImage:
+      "$ref":  ../models/MediaLink.yml#/MediaLink
+    provider:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    published:
+      type: string
+      format: date-time
+    target:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    title:
+      type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    url:
+      type: string
+    verb:
+      type: string

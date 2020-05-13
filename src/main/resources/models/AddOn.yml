@@ -1,0 +1,24 @@
+---
+AddOn:
+  type: object
+  properties:
+    clientId:
+      type: string
+    clientSecret:
+      type: string
+    config:
+      type: object
+    descriptionLocalized:
+      type: string
+    displayNameLocalized:
+      type: string
+    id:
+      type: string
+    published:
+      type: string
+      format: date-time
+    updated:
+      type: string
+      format: date-time
+    uuid:
+      type: string

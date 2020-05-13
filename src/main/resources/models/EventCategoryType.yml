@@ -1,0 +1,29 @@
+EventCategoryType:
+ type: object
+ properties:
+    followerCount:
+      type: integer
+    hexColor:
+      type: string
+    id:
+      type: string
+    likeCount:
+      type: integer
+    localizedDisplayName:
+      type: string
+    name:
+      type: string
+    published:
+      type: string
+      format: date-time
+    tags:
+      type: array
+      items:
+        type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

@@ -1,0 +1,10 @@
+---
+ActionLink:
+  type: object
+  properties:
+    caption:
+      type: string
+    httpVerb:
+      type: string
+    target:
+      type: string

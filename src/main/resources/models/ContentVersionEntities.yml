@@ -1,0 +1,9 @@
+ContentVersionEntities:
+  allOf:
+    - $ref: ../models/Entities.yml#/Entities
+    - type: object
+      properties:
+        list:
+          type: array
+          items:
+            $ref: "../models/ContentVersion.yml#/ContentVersion"

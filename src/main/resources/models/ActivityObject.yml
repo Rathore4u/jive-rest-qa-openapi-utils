@@ -1,0 +1,26 @@
+---
+ActivityObject:
+  type: object
+  properties:
+    author:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    content:
+      type: string
+    displayName:
+      type: string
+    id:
+      type: string
+    image:
+      "$ref":  ../models/MediaLink.yml#/MediaLink
+    objectType:
+      type: string
+    published:
+      type: string
+      format: date-time
+    summary:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    url:
+      type: string

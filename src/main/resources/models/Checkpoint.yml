@@ -1,0 +1,22 @@
+Checkpoint:
+  type: object
+  properties:
+    description:
+      type: string
+    dueDate:
+      type: string
+      format: date-time
+    id:
+      type: string
+    name:
+      type: string
+    project:
+      $ref: ../models/Project.yml#/Project
+    published:
+      type: string
+      format: date-time
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

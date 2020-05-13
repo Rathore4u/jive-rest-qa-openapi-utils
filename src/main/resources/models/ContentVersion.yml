@@ -1,0 +1,27 @@
+ContentVersion:
+  type: object
+  properties:
+    author:
+      $ref: ../models/Person.yml#/Person
+    binaryURL:
+      type: string
+    content:
+      $ref: ../models/Content.yml#/Content
+    id:
+      type: string
+    minorVersion:
+      type: boolean
+    published:
+      type: string
+      format: date-time
+    resources:
+      $ref: ../models/RestResources.yml#/RestResources
+    status:
+      type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    versionNumber:
+      type: integer

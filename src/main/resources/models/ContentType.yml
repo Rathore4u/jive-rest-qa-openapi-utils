@@ -1,0 +1,8 @@
+---
+ContentType:
+  type: object
+  properties:
+    contentTypes:
+      type: array
+      items:
+        type: string

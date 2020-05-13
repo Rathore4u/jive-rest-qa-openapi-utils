@@ -1,0 +1,18 @@
+DirectMessageRequest:
+  type: object
+  properties:
+    content:
+      $ref: ../models/ContentBody.yml#/ContentBody
+    participants:
+      type: array
+      items:
+        type: string
+    subject:
+      type: string
+    type:
+      type: string
+    attachments:
+      type: array
+      items:
+        $ref: ../models/Attachment.yml#/Attachment
+

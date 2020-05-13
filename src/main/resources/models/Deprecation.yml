@@ -1,0 +1,8 @@
+---
+Deprecation:
+  type: object
+  properties:
+    message:
+      type: string
+    deprecated:
+      type: boolean

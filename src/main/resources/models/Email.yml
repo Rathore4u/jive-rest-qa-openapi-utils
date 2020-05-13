@@ -1,0 +1,12 @@
+---
+Email:
+  type: object
+  properties:
+    value:
+      type: string
+    type:
+      type: string
+    jive_label:
+      type: string
+    primary:
+      type: boolean

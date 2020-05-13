@@ -1,0 +1,32 @@
+---
+Category:
+  type: object
+  properties:
+    description:
+      type: string
+      description: Description of the category.
+    followerCount:
+      type: integer
+      description: Number of people following this object.
+    id:
+      type: string
+    likeCount:
+      type: integer
+    name:
+      type: string
+    place:
+      type: string
+    published:
+      type: string
+      format: date-time
+    tags:
+      type: array
+      items:
+        type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

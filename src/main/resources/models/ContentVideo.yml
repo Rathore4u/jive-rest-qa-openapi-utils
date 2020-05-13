@@ -1,0 +1,12 @@
+---
+ContentVideo:
+  type: object
+  properties:
+    height:
+      type: integer
+    width:
+      type: integer
+    stillImageURL:
+      type: string
+    videoSource:
+      type: string

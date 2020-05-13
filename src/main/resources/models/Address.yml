@@ -1,0 +1,23 @@
+---
+Address:
+  type: object
+  properties:
+    jive_label:
+      type: string
+    value:
+      type: object
+      properties:
+        streetAddress:
+          type: string
+        locality:
+          type: string
+        region:
+          type: string
+        postalCode:
+          type: string
+        country:
+          type: string
+    type:
+      type: string
+    primary:
+      type: boolean

@@ -1,0 +1,85 @@
+---
+Announcement:
+  type: object
+  properties:
+    abuseCount:
+      type: integer
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    content:
+      "$ref":  ../models/ContentBody.yml#/ContentBody
+    contentImages:
+      type: array
+      items:
+        "$ref":  ../models/Image.yml#/Image
+    contentVideos:
+      type: array
+      items:
+        "$ref":  ../models/ContentVideo.yml#/ContentVideo
+    endDate:
+      type: string
+      format: date-time
+    favoriteCount:
+      type: integer
+    followerCount:
+      type: integer
+    highlightBody:
+      type: string
+    highlightSubject:
+      type: string
+    highlightTags:
+      type: string
+    iconCss:
+      type: string
+    id:
+      type: string
+    image:
+      type: string
+    lastActivityDate:
+      type: string
+      format: date-time
+    likeCount:
+      type: integer
+    parent:
+      type: string
+    parentContent:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentContentVisible:
+      type: boolean
+    parentPlace:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentVisible:
+      type: boolean
+    publishDate:
+      type: string
+      format: date-time
+    published:
+      type: string
+      format: date-time
+    replyCount:
+      type: integer
+    searchRankings:
+      type: object
+    sortKey:
+      type: integer
+    status:
+      type: string
+    subject:
+      type: string
+    subjectURI:
+      type: string
+    subjectURITargetType:
+      type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    viewCount:
+      type: integer
+    visibleToExternalContributors:
+      type: boolean
+    followed:
+      type: boolean
+    promotedResult:
+      type: boolean

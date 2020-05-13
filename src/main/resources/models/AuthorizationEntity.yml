@@ -1,0 +1,19 @@
+AuthorizationEntity:
+  type: object
+  properties:
+    name:
+      type: string
+    agent:
+      type: string
+    type:
+      type: string
+    created:
+      type: string
+      format: date-time
+    expires:
+      type: string
+      format: date-time
+    appNames:
+      type: array
+      items:
+        type: string

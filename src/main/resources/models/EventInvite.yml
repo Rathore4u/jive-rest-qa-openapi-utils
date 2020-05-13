@@ -1,0 +1,30 @@
+EventInvite:
+  type: object
+  properties:
+    body:
+      type: string
+    event:
+      $ref: ../models/Event.yml#/Event
+    followerCount:
+      type: integer
+    id:
+      type: string
+    invitee:
+      $ref: ../models/Person.yml#/Person
+    inviter:
+      $ref: ../models/Person.yml#/Person
+    likeCount:
+      type: integer
+    published:
+      type: string
+      format: date-time
+    resources:
+      $ref: ../models/RestResources.yml#/RestResources
+    sentDate:
+      type: string
+      format: date-time
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

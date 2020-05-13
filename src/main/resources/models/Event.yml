@@ -1,0 +1,48 @@
+Event:
+ allOf:
+  - $ref: ../models/Content.yml#/Content
+  - type: object
+    properties:
+      attendance:
+        type: object
+        additionalProperties: true
+      authors:
+        type: array
+        items:
+          $ref: ../models/Person.yml#/Person
+      authorship:
+        type: string
+      banner:
+        $ref: ../models/ContentBanner.yml#/ContentBanner
+      city:
+        type: string
+      country:
+        type: string
+      email:
+        type: string
+      endDate:
+        type: string
+        format: date-time
+      eventAccess:
+        type: string
+      eventAccessID:
+        type: integer
+      eventCategory:
+        $ref: ../models/EventCategoryType.yml#/EventCategoryType
+      language:
+        type: string
+      location:
+        type: string
+      maxAttendees:
+        type: integer
+      phone:
+        type: string
+      spansMultipleDays:
+        type: boolean
+      startDate:
+        type: string
+        format: date-time
+      street:
+        type: string
+      url:
+        type: string

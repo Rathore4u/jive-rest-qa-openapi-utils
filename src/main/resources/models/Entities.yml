@@ -1,0 +1,28 @@
+Entities:
+  type: object
+  properties:
+    filtered:
+      type: boolean
+      default: false
+    itemsPerPage:
+      type: integer
+      format: int32
+    links:
+      $ref: "../models/Links.yml#/Links"
+    sorted:
+      type: boolean
+      default: false
+    startIndex:
+      type: integer
+      format: int32
+    suggestedQuery:
+      type: string
+    totalResults:
+      type: integer
+      format: int32
+    unread:
+      type: integer
+      format: int32
+    updatedSince:
+      type: boolean
+      default: false

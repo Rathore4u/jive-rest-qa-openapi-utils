@@ -1,0 +1,18 @@
+---
+Entitlement:
+  type: object
+  properties:
+    contentTypes:
+      type: array
+      items:
+        type: string
+    entitlements:
+      type: array
+      items:
+        type: string
+    objectType:
+      type: string
+    parent:
+      type: string
+    type:
+      type: string

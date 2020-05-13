@@ -1,0 +1,14 @@
+---
+ContentTag:
+  type: object
+  properties:
+    id:
+      type: string
+    index:
+      type: string
+    name:
+      type: string
+    type:
+      type: string
+    uuid:
+      type: string

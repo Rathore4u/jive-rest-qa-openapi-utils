@@ -1,0 +1,113 @@
+---
+Comment:
+  type: object
+  properties:
+    abuseCount:
+      type: integer
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    content:
+      "$ref":  ../models/ContentBody.yml#/ContentBody
+    contentImages:
+      type: array
+      items:
+        "$ref":  ../models/Image.yml#/Image
+    contentVideos:
+      type: array
+      items:
+        "$ref":  ../models/ContentVideo.yml#/ContentVideo
+    externalID:
+      type: integer
+    favoriteCount:
+      type: integer
+    helpfulCount:
+      type: integer
+    highlightBody:
+      type: string
+    highlightSubject:
+      type: string
+    highlightTags:
+      type: string
+    iconCss:
+      type: string
+    id:
+      type: string
+    lastActivityDate:
+      type: string
+      format: date-time
+    likeCount:
+      type: integer
+    outcomeCounts:
+      type: object
+      additionalProperties:
+        type: integer
+    outcomeTypeNames:
+      type: array
+      items:
+        type: string
+    outcomeTypes:
+      type: array
+      items:
+        "$ref":  ../models/OutcomeType.yml#/OutcomeType
+    pageNumber:
+      type: integer
+    parent:
+      type: string
+    parentContent:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentContentVisible:
+      type: boolean
+    parentID:
+      type: string
+    parentPlace:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentVisible:
+      type: boolean
+    published:
+      type: string
+      format: date-time
+    publishedCalendarDate:
+      type: string
+    publishedTime:
+      type: string
+    replyCount:
+      type: integer
+    rootExternalID:
+      type: string
+    rootType:
+      type: string
+    rootURI:
+      type: string
+    searchRankings:
+      type: object
+      additionalProperties:
+        type: string
+    status:
+      type: string
+    subject:
+      type: string
+    type:
+      type: string
+      enum:
+        - comment
+    unhelpfulCount:
+      type: integer
+    updated:
+      type: string
+      format: date-time
+    viewCount:
+      type: integer
+    canMarkHelpful:
+      type: boolean
+    canMarkUnHelpful:
+      type: boolean
+    followed:
+      type: boolean
+    hasVotedHelpful:
+      type: boolean
+    hasVotedUnHelpful:
+      type: boolean
+    promotedResult:
+      type: boolean
+    unHelpfulEnabled:
+      type: boolean

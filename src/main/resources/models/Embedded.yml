@@ -1,0 +1,14 @@
+---
+Embedded:
+  type: object
+  properties:
+    context:
+      type: object
+    gadget:
+      type: string
+    preferredExperience:
+      type: object
+    previewImage:
+      type: string
+    url:
+      type: string

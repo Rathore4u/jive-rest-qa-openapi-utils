@@ -1,0 +1,31 @@
+ContentBanner:
+  type: object
+  properties:
+    bgColor:
+      type: string
+    id:
+      type: string
+    imageURI:
+      type: string
+    position:
+      type: string
+      enum:
+        - left top
+        - left center
+        - left bottom
+        - center top
+        - center center
+        - center bottom
+        - right top
+        - right center
+        - right bottom
+    repeat:
+      type: string
+      enum:
+        - repeat
+        - repeat-x
+        - repeat-y
+        - no-repeat
+        - cover
+    textColor:
+      type: string

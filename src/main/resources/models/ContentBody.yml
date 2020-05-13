@@ -1,0 +1,13 @@
+---
+ContentBody:
+  type: object
+  properties:
+    type:
+      type: string
+      description: The MIME type of this content object's body (typically text/html).
+    text:
+      type: string
+      description: The (typically HTML) text of the content object's body.
+    editable:
+      type: boolean
+      description: Flag indicating if content text is editable.

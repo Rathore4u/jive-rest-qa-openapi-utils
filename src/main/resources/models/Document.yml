@@ -1,0 +1,40 @@
+---
+Document:
+  allOf:
+  - "$ref":  ../models/Content.yml#/Content
+  - type: object
+    properties:
+      unhelpfulCount:
+        type: integer
+      updatedOnBehalfOf:
+        $ref: ../models/OnBehalfOf.yml#/OnBehalfOf
+      updater:
+        $ref: ../models/Person.yml#/Person
+      version:
+        type: integer
+      canMarkHelpful:
+        type: boolean
+      canMarkUnHelpful:
+        type: boolean
+      hasVotedHelpful:
+        type: boolean
+      hasVotedUnHelpful:
+        type: boolean
+      unHelpfulEnabled:
+        type: boolean
+      approvers:
+        type: array
+        items:
+          $ref: ../models/Person.yml#/Person
+      authors:
+        type: array
+        items:
+          $ref: ../models/Person.yml#/Person
+      restrictComments:
+        type: boolean
+      authorship:
+        type: string
+        enum:
+          - open
+          - author
+          - limited

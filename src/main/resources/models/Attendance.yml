@@ -1,0 +1,3 @@
+Attendance:
+ type: object
+ additionalProperties: true

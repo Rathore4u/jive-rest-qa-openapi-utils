@@ -1,0 +1,10 @@
+---
+Discussion:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        helpful:
+          type: array
+          items:
+            type: string

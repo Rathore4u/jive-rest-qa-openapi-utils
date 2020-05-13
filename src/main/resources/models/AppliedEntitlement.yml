@@ -1,0 +1,26 @@
+---
+AppliedEntitlement:
+  type: object
+  properties:
+    comment:
+      type: boolean
+    create:
+      type: boolean
+    manage:
+      type: boolean
+    moderate:
+      type: boolean
+    objectType:
+      type: string
+    person:
+      type: string
+    rate:
+      type: boolean
+    read:
+      type: boolean
+    securityGroup:
+      type: string
+    type:
+      type: string
+    vote:
+      type: boolean
