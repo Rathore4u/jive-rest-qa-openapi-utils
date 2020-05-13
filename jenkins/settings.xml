@@ -1,0 +1,9 @@
+<settings>
+    <servers>
+        <server>
+            <id>nexus-releases</id>
+            <username>${env.NEXUS_CRED_USR}</username>
+            <password>${env.NEXUS_CRED_PSW}</password>
+        </server>
+    </servers>
+</settings>
