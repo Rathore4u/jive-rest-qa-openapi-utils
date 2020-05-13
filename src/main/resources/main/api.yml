@@ -1,0 +1,507 @@
+openapi: 3.0.0
+info:
+  description: This is Jive REST Api description
+  version: 1.0.0
+  title: JIVE Rest API
+tags:
+  - name: person
+    description: Everything related to managing people in jive
+    externalDocs:
+      description: People docs
+      url: https://developers.jivesoftware.com/api/v3/cloud/rest/PersonService.html
+  - name: content
+    description: Web service endpoints for functionality that is common to all content
+      objects.
+  - name: search
+    description: Search
+paths:
+  /people:
+    $ref: ../apis/people.yml
+  /people/@all:
+    $ref: ../apis/people/@all.yml
+  /people/@filterableFields:
+    $ref: ../apis/people/@filterableFields.yml
+  /people/@metadata:
+    $ref: ../apis/people/@metadata.yml
+  /people/@resources:
+    $ref: ../apis/people/@resources.yml
+  /people/@supportedFields:
+    $ref: ../apis/people/@supportedFields.yml
+  /people/avatar/deactivated:
+    $ref: ../apis/people/avatar/deactivated.yml
+  /people/email/{email}:
+    $ref: ../apis/people/email/_email_.yml
+  /people/expertise/{tagName}:
+    $ref: ../apis/people/expertise/_tagName_.yml
+  /people/external/{identityType}/{identity}:
+    $ref: ../apis/people/external/_identityType_/_identity_.yml
+  /people/recommended:
+    $ref: ../apis/people/recommended.yml
+  /people/trending:
+    $ref: ../apis/people/trending.yml
+  /people/username/{username}:
+    $ref: ../apis/people/username/_username_.yml
+  /people/{personID}:
+    $ref: ../apis/people/_personID_.yml
+  /people/{personID}/@colleagues:
+    $ref: ../apis/people/_personID_/@colleagues.yml
+  /people/{personID}/@common:
+    $ref: ../apis/people/_personID_/@common.yml
+  /people/{personID}/@featuredContent:
+    $ref: ../apis/people/_personID_/@featuredContent.yml
+  /people/{personID}/@followers:
+    $ref: ../apis/people/_personID_/@followers.yml
+  /people/{personID}/@following:
+    $ref: ../apis/people/_personID_/@following.yml
+  /people/{personID}/@following/{followedPersonID}:
+    $ref: ../apis/people/_personID_/@following/_followedPersonID_.yml
+  /people/{personID}/@manager:
+    $ref: ../apis/people/_personID_/@manager.yml
+  /people/{personID}/@news:
+    $ref: ../apis/people/_personID_/@news.yml
+  /people/{personID}/@recognition:
+    $ref: ../apis/people/_personID_/@recognition.yml
+  /people/{personID}/@reports:
+    $ref: ../apis/people/_personID_/@reports.yml
+  /people/{personID}/@reports/{reportPersonID}:
+    $ref: ../apis/people/_personID_/@reports/_reportPersonID_.yml
+  /people/{personID}/@social:
+    $ref: ../apis/people/_personID_/@social.yml
+  /people/{personID}/@trendingContent:
+    $ref: ../apis/people/_personID_/@trendingContent.yml
+  /people/{personID}/@trendingPlaces:
+    $ref: ../apis/people/_personID_/@trendingPlaces.yml
+  /people/{personID}/acceptTermsAndConditions:
+    $ref: ../apis/people/_personID_/acceptTermsAndConditions.yml
+  /people/{personID}/activities:
+    $ref: ../apis/people/_personID_/activities.yml
+  /people/{personID}/avatar:
+    $ref: ../apis/people/_personID_/avatar.yml
+  /people/{personID}/blog:
+    $ref: ../apis/people/_personID_/blog.yml
+  /people/{personID}/expertise/:
+    $ref: ../apis/people/_personID_/expertise.yml
+  /people/{personID}/expertise/endorse:
+    $ref: ../apis/people/_personID_/expertise/endorse.yml
+  /people/{personID}/expertise/endorse/{tagName}:
+    $ref: ../apis/people/_personID_/expertise/endorse/_tagName_.yml
+  /people/{personID}/expertise/endorsers/{tagName}:
+    $ref: ../apis/people/_personID_/expertise/endorsers/_tagName_.yml
+  /people/{personID}/expertise/pending:
+    $ref: ../apis/people/_personID_/expertise/pending.yml
+  /people/{personID}/expertise/top:
+    $ref: ../apis/people/_personID_/expertise/top.yml
+  /people/{personID}/expertise/{tagName}:
+    $ref: ../apis/people/_personID_/expertise/_tagName_.yml
+  /people/{personID}/extprops:
+    $ref: ../apis/people/_personID_/extprops.yml
+  /people/{personID}/extprops/addOn/{addonUUID}:
+    $ref: ../apis/people/_personID_/extprops/addOn/_addonUUID_.yml
+  /people/{personID}/followingIn:
+    $ref: ../apis/people/_personID_/followingIn.yml
+  /people/{personID}/images:
+    $ref: ../apis/people/_personID_/images.yml
+  /people/{personID}/images/{index}:
+    $ref: ../apis/people/_personID_/images/_index_.yml
+  /people/{personID}/images/{index}/data:
+    $ref: ../apis/people/_personID_/images/_index_/data.yml
+  /people/{personID}/pages:
+    $ref: ../apis/people/_personID_/pages.yml
+  /people/{personID}/pages/prototype:
+    $ref: ../apis/people/_personID_/pages/prototype.yml
+  /people/{personID}/privateprops:
+    $ref: ../apis/people/_personID_/privateprops.yml
+  /people/{personID}/profilePrivacy:
+    $ref: ../apis/people/_personID_/profilePrivacy.yml
+  /people/{personID}/profilePrivacy/{fieldID}:
+    $ref: ../apis/people/_personID_/profilePrivacy/_fieldID_.yml
+  /people/{personID}/roles:
+    $ref: ../apis/people/_personID_/roles.yml
+  /people/{personID}/securityGroups:
+    $ref: ../apis/people/_personID_/securityGroups.yml
+  /people/{personID}/streams:
+    $ref: ../apis/people/_personID_/streams.yml
+  /people/{personID}/tasks:
+    $ref: ../apis/people/_personID_/tasks.yml
+  /people/{personID}/termsAndConditions:
+    $ref: ../apis/people/_personID_/termsAndConditions.yml
+  /contents/featured:
+    $ref: ../apis/contents/featured.yml
+  /contents/recent:
+    $ref: ../apis/contents/recent.yml
+  /contents/trending:
+    $ref: ../apis/contents/trending.yml
+  /contents/recommended:
+    $ref: ../apis/contents/recommended.yml
+  /contents/popular:
+    $ref: ../apis/contents/popular.yml
+  /contents:
+    $ref: ../apis/contents.yml
+  /contents/{contentID}:
+    $ref: ../apis/contents/_contentID_.yml
+  /contents/{contentID}/previewImage:
+    $ref: ../apis/contents/_contentID_/previewImage.yml
+  /contents/{contentID}/editable:
+    $ref: ../apis/contents/_contentID_/editable.yml
+  /contents/{contentID}/read:
+    $ref: ../apis/contents/_contentID_/read.yml
+  /contents/{contentID}/data:
+    $ref: ../apis/contents/_contentID_/data.yml
+  /contents/{contentID}/helpful:
+    $ref: ../apis/contents/_contentID_/helpful.yml
+  /contents/{contentID}/likes:
+    $ref: ../apis/contents/_contentID_/likes.yml
+  /contents/{contentID}/unhelpful:
+    $ref: ../apis/contents/_contentID_/unhelpful.yml
+  /contents/{contentID}/extprops:
+    $ref: ../apis/contents/_contentID_/extprops.yml
+  /contents/{contentID}/extprops/addOn/{addonUUID}:
+    $ref: ../apis/contents/_contentID_/extprops/addOn/_addonUUID_.yml
+  /contents/{contentID}/outcomes:
+    $ref: ../apis/contents/_contentID_/outcomes.yml
+  /contents/{contentID}/abuseReports:
+    $ref: ../apis/contents/_contentID_/abuseReports.yml
+  /contents/{contentID}/childOutcomeTypes:
+    $ref: ../apis/contents/_contentID_/childOutcomeTypes.yml
+  /contents/{contentID}/followers:
+    $ref: ../apis/contents/_contentID_/followers.yml
+  /contents/{contentID}/comments:
+    $ref: ../apis/contents/_contentID_/comments.yml
+  /contents/{contentID}/followingIn:
+    $ref: ../apis/contents/_contentID_/followingIn.yml
+  /contents/{contentID}/entitlements:
+    $ref: ../apis/contents/_contentID_/entitlements.yml
+  /contents/{contentID}/entitlements/{personID}:
+    $ref: ../apis/contents/_contentID_/entitlements/_personID_.yml
+  /places:
+    $ref: ../apis//places.yml
+  /places/recommended:
+    $ref: ../apis/places/recommended.yml
+  /places/root:
+    $ref: ../apis/places/root.yml
+  /places/suggested/{contentType}:
+    $ref: ../apis/places/suggested/_contentType_.yml
+  /places/trending:
+    $ref: ../apis/places/trending.yml
+  /places/{placeID}:
+    $ref: ../apis/places/_placeID_.yml
+  /places/{placeID}/activities:
+    $ref: ../apis/places/_placeID_/activities.yml
+  /places/{placeID}/announcements:
+    $ref: ../apis/places/_placeID_/announcements.yml
+  /places/{placeID}/appliedEntitlements:
+    $ref: ../apis/places/_placeID_/appliedEntitlements.yml
+  /places/{placeID}/avatar:
+    $ref: ../apis/places/_placeID_/avatar.yml
+  /places/{placeID}/categories:
+    $ref: ../apis/places/_placeID_/categories.yml
+  /places/{placeID}/categories/{categoryID}:
+    $ref: ../apis/places/_placeID_/categories/_categoryID_.yml
+  /places/{placeID}/contents:
+    $ref: ../apis/places/_placeID_/contents.yml
+  /places/{placeID}/contents/featured:
+    $ref: ../apis/places/_placeID_/contents/featured.yml
+  /places/{placeID}/extprops:
+    $ref: ../apis/places/_placeID_/extprops.yml
+  /places/{placeID}/extprops/addOn/{addonUUID}:
+    $ref: ../apis/places/_placeID_/extprops/addOn/_addonUUID_.yml
+  /places/{placeID}/followers:
+    $ref: ../apis/places/_placeID_/followers.yml
+  /places/{placeID}/followingIn:
+    $ref: ../apis/places/_placeID_/followingIn.yml
+  /places/{placeID}/pages:
+    $ref: ../apis/places/_placeID_/pages.yml
+  /places/{placeID}/permissions:
+    $ref: ../apis/places/_placeID_/permissions.yml
+  /places/{placeID}/places:
+    $ref: ../apis/places/_placeID_/places.yml
+  /places/{placeID}/settings:
+    $ref: ../apis/places/_placeID_/settings.yml
+  /places/{placeID}/statics:
+    $ref: ../apis/places/_placeID_/statics.yml
+  /places/{placeID}/suggested/{contentType}:
+    $ref: ../apis/places/_placeID_/suggested/_contentType_.yml
+  /places/{placeID}/tasks:
+    $ref: ../apis/places/_placeID_/tasks.yml
+  /search/contents:
+    $ref: ../apis/search/contents.yml
+  /search/monitor:
+    $ref: ../apis/search/monitor.yml
+  /search/people:
+    $ref: ../apis/search/people.yml
+  /search/places:
+    $ref: ../apis/search/places.yml
+  /search/tags:
+    $ref: ../apis/search/tags.yml
+
+  /messages/contents/{contentID}:
+    $ref: ../apis/messages/contents/_contentID_.yml
+  /messages:
+    $ref: ../apis/messages.yml
+  /messages/{messageID}:
+    $ref: ../apis/messages/_messageID_.yml
+  /messages/{messageID}/correctAnswer:
+    $ref: ../apis/messages/_messageID_/correctAnswer.yml
+  /messages/{messageID}/editable:
+    $ref: ../apis/messages/_messageID_/editable.yml
+  /messages/{messageID}/extprops:
+    $ref: ../apis/messages/_messageID_/extprops.yml
+  /messages/{messageID}/extprops/addOn/{addonUUID}:
+    $ref: ../apis/messages/_messageID_/extprops/addOn/_addonUUID_.yml
+  /messages/{messageID}/helpful:
+    $ref: ../apis/messages/_messageID_/helpful.yml
+  /messages/{messageID}/likes:
+    $ref: ../apis/messages/_messageID_/likes.yml
+  /messages/{messageID}/messages:
+    $ref: ../apis/messages/_messageID_/messages.yml
+  /messages/{messageID}/outcomeTypes:
+    $ref: ../apis/messages/_messageID_/outcomeTypes.yml
+  /messages/{messageID}/outcomes:
+    $ref: ../apis/messages/_messageID_/outcomes.yml
+  /messages/{messageID}/unhelpful:
+    $ref: ../apis/messages/_messageID_/unhelpful.yml
+
+  /dms:
+   $ref: ../apis//dms.yml
+  /dms/{dmID}:
+   $ref: ../apis/dms/_dmID_.yml
+  /dms/{dmID}/comments:
+   $ref: ../apis/dms/_dmID_/comments.yml
+  /dms/{dmID}/images:
+   $ref: ../apis/dms/_dmID_/images.yml
+  /dms/{dmID}/participants:
+   $ref: ../apis/dms/_dmID_/participants.yml
+  /dms/{dmID}/read:
+   $ref: ../apis/dms/_dmID_/read.yml
+  /dms/{dmID}/subject:
+   $ref: ../apis/dms/_dmID_/subject.yml
+
+  /inbox:
+   $ref: ../apis//inbox.yml
+  /inbox/allRead:
+   $ref: ../apis/inbox/allRead.yml
+  /inbox/counts:
+   $ref: ../apis/inbox/counts.yml
+
+  /announcements:
+    $ref: ../apis//announcements.yml
+  /announcements/{announcementID}:
+    $ref: ../apis/announcements/_announcementID_.yml
+  /announcements/{announcementID}/read:
+    $ref: ../apis/announcements/_announcementID_/read.yml
+
+  /checkpoints/{projectID}:
+    $ref: ../apis/checkpoints/_projectID_.yml
+
+  /outcomes:
+    $ref: ../apis//outcomes.yml
+  /outcomes/{outcomeID}:
+    $ref: ../apis/outcomes/_outcomeID_.yml
+  /outcomes/{outcomeID}/history:
+    $ref: ../apis/outcomes/_outcomeID_/history.yml
+  /outcomes/{outcomeID}/outcomes:
+    $ref: ../apis/outcomes/_outcomeID_/outcomes.yml
+    
+  /comments:
+    $ref: ../apis//comments.yml
+  /comments/{commentID}:
+    $ref: ../apis/comments/_commentID_.yml
+  /comments/{commentID}/abuseReports:
+    $ref: ../apis/comments/_commentID_/abuseReports.yml
+  /comments/{commentID}/comments:
+    $ref: ../apis/comments/_commentID_/comments.yml
+  /comments/{commentID}/editable:
+    $ref: ../apis/comments/_commentID_/editable.yml
+  /comments/{commentID}/extprops:
+    $ref: ../apis/comments/_commentID_/extprops.yml
+  /comments/{commentID}/extprops/addOn/{addonUUID}:
+    $ref: ../apis/comments/_commentID_/extprops/addOn/_addonUUID_.yml
+  /comments/{commentID}/helpful:
+    $ref: ../apis/comments/_commentID_/helpful.yml
+  /comments/{commentID}/likes:
+    $ref: ../apis/comments/_commentID_/likes.yml
+  /comments/{commentID}/outcomeTypes:
+    $ref: ../apis/comments/_commentID_/outcomeTypes.yml
+  /comments/{commentID}/outcomes:
+    $ref: ../apis/comments/_commentID_/outcomes.yml
+  /comments/{commentID}/unhelpful:
+    $ref: ../apis/comments/_commentID_/unhelpful.yml
+
+  /admin/blogs/appliedEntitlements:
+    $ref: ../apis/admin/blogs/appliedEntitlements.yml
+  /admin/caches:
+    $ref: ../apis/admin/caches.yml
+  /admin/caches/{name}:
+    $ref: ../apis/admin/caches/_name_.yml
+  /admin/caches/{name}/clear:
+    $ref: ../apis/admin/caches/_name_/clear.yml
+  /admin/groups/appliedEntitlements:
+    $ref: ../apis/admin/groups/appliedEntitlements.yml
+  /admin/people/authorizations/oauth/{ID}:
+    $ref: ../apis/admin/people/authorizations/oauth/_ID_.yml
+  /admin/people/{personID}/authorizations/oauth:
+    $ref: ../apis/admin/people/_personID_/authorizations/oauth.yml
+  /admin/plugins:
+    $ref: ../apis/admin/plugins.yml
+  /admin/plugins/{name}:
+    $ref: ../apis/admin/plugins/_name_.yml
+  /admin/profileFields:
+    $ref: ../apis/admin/profileFields.yml
+  /admin/profileFields/@name:
+    $ref: ../apis/admin/profileFields/@name.yml
+  /admin/profileFields/order:
+    $ref: ../apis/admin/profileFields/order.yml
+  /admin/profileFields/{profileFieldID}:
+    $ref: ../apis/admin/profileFields/_profileFieldID_.yml
+  /admin/profileFields/{profileFieldID}/values:
+    $ref: ../apis/admin/profileFields/_profileFieldID_/values.yml
+  /admin/properties:
+    $ref: ../apis/admin/properties.yml
+  /admin/properties/{name}:
+    $ref: ../apis/admin/properties/_name_.yml
+  /admin/spaces/appliedEntitlements:
+    $ref: ../apis/admin/spaces/appliedEntitlements.yml
+  /admin/video/config:
+    $ref: ../apis/admin/video/config.yml
+
+  /images:
+    $ref: ../apis//images.yml
+  /images/contents/images/{imageID}:
+    $ref: ../apis/images/contents/images/_imageID_.yml
+  /images/contents/{contentID}:
+    $ref: ../apis/images/contents/_contentID_.yml
+  /images/status/c/{name}:
+    $ref: ../apis/images/status/c/_name_.yml
+  /images/status/{name}:
+    $ref: ../apis/images/status/_name_.yml
+  /images/{imageID}:
+    $ref: ../apis/images/_imageID_.yml
+
+  /videos:
+    $ref: ../apis//videos.yml
+  /videos/downloadOptions/{videoID}:
+    $ref: ../apis/videos/downloadOptions/_videoID_.yml
+  /videos/embedded/{videoID}/contentType/{contentType}/contentID/{contentID}:
+    $ref: ../apis/videos/embedded/_videoID_/contentType/_contentType_/contentID/_contentID_.yml
+  /videos/images/{videoID}:
+    $ref: ../apis/videos/images/_videoID_.yml
+  /videos/uploadConfig:
+    $ref: ../apis/videos/uploadConfig.yml
+
+  /noop/discussion:
+    $ref: ../apis/noop/discussion.yml
+  /noop/document:
+    $ref: ../apis/noop/document.yml
+  /noop/favorite:
+    $ref: ../apis/noop/favorite.yml
+  /noop/file:
+    $ref: ../apis/noop/file.yml
+  /noop/poll:
+    $ref: ../apis/noop/poll.yml
+  /noop/post:
+    $ref: ../apis/noop/post.yml
+  /noop/slide:
+    $ref: ../apis/noop/slide.yml
+  /noop/task:
+    $ref: ../apis/noop/task.yml
+  /noop/update:
+    $ref: ../apis/noop/update.yml
+  /noop/group:
+    $ref: ../apis/noop/group.yml
+  /noop/event:
+    $ref: ../apis/noop/event.yml 
+  /noop/idea:
+    $ref: ../apis/noop/idea.yml
+  /noop/extra_stuff:
+    $ref: ../apis/noop/extra_stuff.yml
+  /noop/outcome_approvers:
+    $ref: ../apis/noop/outcome_approvers.yml
+
+  /invites/{inviteID}:
+    $ref: ../apis/invites/_inviteID_.yml
+  /invites/places/{placeID}:
+    $ref: ../apis/invites/places/_placeID_.yml
+
+  /invites/event/all/{eventID}:
+    $ref: ../apis/invites/event/all/_eventID_.yml
+  /invites/event/{eventID}:
+    $ref: ../apis/invites/event/_eventID_.yml
+  /invites/event/{inviteID}:
+    $ref: ../apis/invites/event/_inviteID_.yml
+
+  /streams/connections/activities:
+    $ref: ../apis/streams/connections/activities.yml
+  /streams/{streamID}:
+    $ref: ../apis/streams/_streamID_.yml
+  /streams/{streamID}/activities:
+    $ref: ../apis/streams/_streamID_/activities.yml
+  /streams/{streamID}/activities/count:
+    $ref: ../apis/streams/_streamID_/activities/count.yml
+  /streams/{streamID}/associations:
+    $ref: ../apis/streams/_streamID_/associations.yml
+  /streams/{streamID}/associations/{objectType}/{objectID}:
+    $ref: ../apis/streams/_streamID_/associations/_objectType_/_objectID_.yml
+  
+  /shares:
+    $ref: ../apis//shares.yml
+  /shares/{shareID}:
+    $ref: ../apis/shares/_shareID_.yml
+  /shares/{shareID}/comments:
+    $ref: ../apis/shares/_shareID_/comments.yml
+  /shares/{shareID}/read:
+    $ref: ../apis/shares/_shareID_/read.yml
+
+  /versions/{contentID}:
+    $ref: ../apis/versions/_contentID_.yml
+  /versions/{contentID}/{versionNumber}:
+    $ref: ../apis/versions/_contentID_/_versionNumber_.yml
+  /versions/{contentID}/{versionNumber}/data:
+    $ref: ../apis/versions/_contentID_/_versionNumber_/data.yml
+
+  /activities:
+    $ref: ../apis//activities.yml
+  /activities/count:
+    $ref: ../apis/activities/count.yml
+  /activities/discovery:
+    $ref: ../apis/activities/discovery.yml
+  /activities/frequent/content:
+    $ref: ../apis/activities/frequent/content.yml
+  /activities/frequent/people:
+    $ref: ../apis/activities/frequent/people.yml
+  /activities/frequent/places:
+    $ref: ../apis/activities/frequent/places.yml
+  /activities/recent/content:
+    $ref: ../apis/activities/recent/content.yml
+  /activities/recent/people:
+    $ref: ../apis/activities/recent/people.yml
+  /activities/recent/places:
+    $ref: ../apis/activities/recent/places.yml
+  /activities/social/news:
+    $ref: ../apis/activities/social/news.yml
+  /activities/social/people:
+    $ref: ../apis/activities/social/people.yml
+    
+  /votes/{contentID}:
+    $ref: ../apis/votes/_contentID_.yml
+
+  /publications:
+    $ref: ../apis//publications.yml
+  /publications/{publicationID}:
+    $ref: ../apis/publications/_publicationID_.yml
+  /publications/{publicationID}/rebuild:
+    $ref: ../apis/publications/_publicationID_/rebuild.yml
+  /publications/{publicationID}/subscriptions/{subscriptionID}/subscribers:
+    $ref: ../apis/publications/_publicationID_/subscriptions/_subscriptionID_/subscribers.yml
+
+  /securityGroups:
+    $ref: ../apis/securityGroups.yml
+ 
+security:
+  - jiveAuth: []
+servers:
+  - url: https://jvmbl-automation-tests-cloud.jivelandia.com/api/core/v3
+components:
+  securitySchemes:
+    jiveAuth:
+      type: http
+      scheme: basic

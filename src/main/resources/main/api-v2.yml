@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  description: This is Jive REST Api description
+  version: 2.0.0
+  title: JIVE Rest API
+tags:
+- name: featuredContent
+paths:
+  /featuredContent/toggle/{objectType}/{objectId}/{containerId}/{containerType}:
+    post:
+      tags:
+        - featuredContent
+      operationId: toggleFeatured
+      parameters:
+        - in: path
+          name: objectType
+          required: true
+          schema:
+            $ref: "#/components/schemas/ObjectType"
+        - in: path
+          name: objectId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: containerId
+          required: true
+          schema:
+            type: integer
+        - in: path
+          name: containerType
+          required: true
+          schema:
+            $ref: "#/components/schemas/ContainerType"
+      responses:
+        "204":
+          description: success
+  /featuredContent/toggle/{objectType}/{objectId}:
+    post:
+      tags:
+        - featuredContent
+      operationId: toggleFeaturedOnProfile
+      parameters:
+        - in: path
+          name: objectType
+          required: true
+          schema:
+            $ref: "#/components/schemas/ObjectType"
+        - in: path
+          name: objectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: success
+security:
+  - jiveAuth: []
+servers:
+  - url: https://jvmbl-automation-tests-cloud.jivelandia.com/__services/v2/rest
+components:
+  schemas:
+    ContainerType:
+      type: integer
+      enum:
+        - -2 # System container
+        - 14 # Community
+        - 600 # Project
+        - 700 # Social group
+        - 2020 # User Container
+        - 37 # Blog
+        - -2106121635 # =?!?
+    ObjectType:
+      type: integer
+      enum:
+        - 36 # Draft
+        - 42 # TAG_SET
+        - 27 # Avatar
+        - -2 # System container
+        - 32 # BAN
+        - 701 # Social group member
+        - 1000 # BRIDGE
+        - -3 # GroupRole Container
+  securitySchemes:
+    jiveAuth:
+      type: http
+      scheme: basic
