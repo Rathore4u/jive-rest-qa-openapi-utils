@@ -1,0 +1,5 @@
+---
+ExtProps:
+  type: object
+  additionalProperties:
+    type: string

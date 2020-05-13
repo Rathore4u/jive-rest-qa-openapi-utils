@@ -1,0 +1,87 @@
+---
+JiveExtension:
+  type: object
+  properties:
+    answer:
+      type: string
+    canComment:
+      type: boolean
+    canLike:
+      type: boolean
+    canReply:
+      type: boolean
+    collection:
+      type: string
+    collectionLink:
+      type: string
+    collectionRead:
+      type: boolean
+    collectionUpdated:
+      type: string
+      format: date-time
+    discovery:
+      type: array
+      items:
+        type: string
+    display:
+      type: string
+    followingInStream:
+      type: boolean
+    iconCss:
+      type: string
+    likeCount:
+      type: integer
+    liked:
+      type: boolean
+    mentioned:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    objectID:
+      type: integer
+    objectType:
+      type: integer
+    objectViewed:
+      type: boolean
+    onBehalfOf:
+      "$ref":  ../models/OnBehalfOf.yml#/OnBehalfOf
+    outcomeComment:
+      type: string
+    outcomeTypeName:
+      type: string
+    parent:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    parentActor:
+      "$ref":  ../models/ActivityObject.yml#/ActivityObject
+    parentLikeCount:
+      type: integer
+    parentLiked:
+      type: boolean
+    parentOnBehalfOf:
+      "$ref":  ../models/OnBehalfOf.yml#/OnBehalfOf
+    parentReplyCount:
+      type: integer
+    productIcon:
+      type: string
+    productName:
+      type: string
+    question:
+      type: boolean
+    read:
+      type: boolean
+    replyCount:
+      type: integer
+    resolved:
+      type: string
+    state:
+      type: string
+      enum:
+      - awaiting_action
+      - accepted
+      - rejected
+      - ignored
+      - hidden
+    update:
+      type: string
+    updateCollection:
+      type: string
+    via:
+      "$ref":  ../models/Via.yml#/Via

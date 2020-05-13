@@ -1,0 +1,14 @@
+---
+News:
+  type: object
+  properties:
+    id:
+      type: string
+    newsStreams:
+      type: array
+      items:
+        "$ref":  ../models/NewsStream.yml#/NewsStream
+    owner:
+      "$ref":  ../models/Person.yml#/Person
+    type:
+      type: string

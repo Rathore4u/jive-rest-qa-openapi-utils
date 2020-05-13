@@ -1,0 +1,34 @@
+---
+OutcomeType:
+  type: object
+  properties:
+    alternativeGrouping:
+      type: string
+    communityAudience:
+      type: string
+    confirmContentEdit:
+      type: string
+    confirmExclusion:
+      type: boolean
+    confirmUnmark:
+      type: boolean
+    fields:
+      type: array
+      items:
+        "$ref":  ../models/Field.yml#/Field
+    generalNote:
+      type: boolean
+    id:
+      type: string
+    name:
+      type: string
+    noteRequired:
+      type: boolean
+    shareable:
+      type: boolean
+    type:
+      type: string
+      enum:
+      - outcomeType
+    urlAllowed:
+      type: boolean

@@ -1,0 +1,10 @@
+---
+Outcome:
+  allOf:
+   - $ref: ../models/OutcomeBase.yml#/OutcomeBase
+   - type: object
+     properties:
+      properties:
+        type: object
+        additionalProperties: true
+      

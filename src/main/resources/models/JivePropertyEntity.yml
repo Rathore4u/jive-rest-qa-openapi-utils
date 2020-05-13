@@ -1,0 +1,10 @@
+JivePropertyEntity:
+  type: object
+  properties:
+    name:
+      type: string
+    value:
+      type: string
+    type:
+      type: string
+      default: jiveProperty

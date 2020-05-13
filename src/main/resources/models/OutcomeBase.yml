@@ -1,0 +1,36 @@
+---
+OutcomeBase:
+  type: object
+  properties:
+    creationDate:
+      type: string
+      format: date-time
+    id:
+      type: string
+    note:
+      type: string
+    outcomeType:
+      "$ref":  ../models/OutcomeType.yml#/OutcomeType
+    parent:
+      type: string
+    predecessorOutcome:
+      type: string
+    root:
+      type: string
+    status:
+      type: string
+      enum:
+      - incomplete
+      - pending_approval
+      - awaiting moderation
+      - rejected
+      - published
+    successorOutcomeTypes:
+      type: array
+      items:
+        "$ref":  ../models/OutcomeType.yml#/OutcomeType
+    updated:
+      type: string
+      format: date-time
+    user:
+      "$ref":  ../models/Person.yml#/Person

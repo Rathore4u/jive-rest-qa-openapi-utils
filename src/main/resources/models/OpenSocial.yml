@@ -1,0 +1,14 @@
+---
+OpenSocial:
+  type: object
+  properties:
+    actionLinks:
+      type: array
+      items:
+        "$ref":  ../models/ActionLink.yml#/ActionLink
+    deliverTo:
+      type: array
+      items:
+        type: string
+    embed:
+      "$ref":  ../models/Embedded.yml#/Embedded

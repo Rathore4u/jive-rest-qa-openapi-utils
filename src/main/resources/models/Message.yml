@@ -1,0 +1,123 @@
+---
+Message:
+  type: object
+  properties:
+    abuseCount:
+      type: integer
+    answer:
+      type: boolean
+    answeredQuestionCount:
+      type: integer
+    attachments:
+      type: array
+      items:
+        "$ref":  ../models/Attachment.yml#/Attachment
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    content:
+      "$ref":  ../models/ContentBody.yml#/ContentBody
+    contentImages:
+      type: array
+      items:
+        "$ref":  ../models/Image.yml#/Image
+    contentVideos:
+      type: array
+      items:
+        "$ref":  ../models/ContentVideo.yml#/ContentVideo
+    discussion:
+      type: string
+    favoriteCount:
+      type: integer
+    followerCount:
+      type: integer
+    fromQuest:
+      type: string
+    helpful:
+      type: boolean
+    helpfulCount:
+      type: integer
+    highlightBody:
+      type: string
+    highlightSubject:
+      type: string
+    highlightTags:
+      type: string
+    iconCss:
+      type: string
+    id:
+      type: integer
+    lastActivityDate:
+      type: string
+      format: date-time
+    likeCount:
+      type: integer
+    messageTarget:
+      type: string
+    onBehalfOf:
+      "$ref":  ../models/OnBehalfOf.yml#/OnBehalfOf
+    outcomeCounts:
+      type: object
+    outcomeTypeNames:
+      type: array
+      items:
+        type: string
+    outcomeTypes:
+      type: array
+      items:
+        "$ref":  ../models/OutcomeType.yml#/OutcomeType
+    parent:
+      type: string
+    parentContent:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentContentVisible:
+      type: boolean
+    parentPlace:
+      "$ref":  ../models/Summary.yml#/Summary
+    parentVisible:
+      type: boolean
+    published:
+      type: string
+      format: date-time
+    question:
+      type: boolean
+    replyCount:
+      type: integer
+    resources:
+      type: object
+    searchRankings:
+      type: object
+    status:
+      type: string
+    subject:
+      type: string
+    tags:
+      type: array
+      items:
+        type: string
+    type:
+      type: string
+    unhelpfulCount:
+      type: integer
+    updated:
+      type: string
+      format: date-time
+    via:
+      "$ref":  ../models/Via.yml#/Via
+    viewCount:
+      type: integer
+    visibleToExternalContributors:
+      type: boolean
+    canMarkHelpful:
+      type: boolean
+    canMarkUnHelpful:
+      type: boolean
+    followed:
+      type: boolean
+    hasVotedHelpful:
+      type: boolean
+    hasVotedUnHelpful:
+      type: boolean
+    promotedResult:
+      type: boolean
+    unHelpfulEnabled:
+      type: boolean

@@ -1,0 +1,12 @@
+---
+PhoneNumber:
+  type: object
+  properties:
+    jive_label:
+      type: string
+    value:
+      type: string
+    type:
+      type: string
+    primary:
+      type: boolean

@@ -1,0 +1,32 @@
+---
+Field:
+  type: object
+  properties:
+    array:
+      type: boolean
+    availability:
+      type: string
+    description:
+      type: string
+    displayName:
+      type: string
+    editable:
+      type: boolean
+    filterable:
+      type: boolean
+    name:
+      type: string
+    newsEnabled:
+      type: boolean
+    options:
+      type: array
+      items:
+        type: string
+    required:
+      type: boolean
+    since:
+      type: string
+    type:
+      type: string
+    unpublished:
+      type: boolean

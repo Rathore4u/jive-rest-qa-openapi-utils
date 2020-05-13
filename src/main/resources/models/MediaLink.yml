@@ -1,0 +1,12 @@
+---
+MediaLink:
+  type: object
+  properties:
+    duration:
+      type: integer
+    height:
+      type: integer
+    width:
+      type: integer
+    url:
+      type: string

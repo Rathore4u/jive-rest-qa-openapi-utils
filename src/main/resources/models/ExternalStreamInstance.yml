@@ -1,0 +1,38 @@
+---
+ExternalStreamInstance:
+  type: object
+  properties:
+    column:
+      type: integer
+    config:
+      type: object
+    definition:
+      "$ref":  ../models/ExternalStreamDefinition.yml#/ExternalStreamDefinition
+    displayName:
+      type: string
+    externalId:
+      type: string
+    id:
+      type: string
+    lastActivityPost:
+      type: string
+      format: date-time
+    lastRegister:
+      type: string
+      format: date-time
+    parent:
+      type: string
+    published:
+      type: string
+      format: date-time
+    publishError:
+      "$ref":  ../models/PublishError.yml#/PublishError
+    state:
+      type: string
+    status:
+      type: object
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

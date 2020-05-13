@@ -1,0 +1,10 @@
+---
+Name:
+  type: object
+  properties:
+    formatted:
+      type: string
+    givenName:
+      type: string
+    familyName:
+      type: string

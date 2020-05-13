@@ -1,0 +1,12 @@
+---
+Level:
+  type: object
+  properties:
+    description:
+      type: string
+    imageURI:
+      type: string
+    name:
+      type: string
+    points:
+      type: integer

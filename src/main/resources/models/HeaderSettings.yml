@@ -1,0 +1,36 @@
+---
+HeaderSettings:
+  type: object
+  properties:
+    bgColor:
+      type: string
+    bgCustomImageName:
+      type: string
+    bgCustomImageUrl:
+      type: string
+    bgPosition:
+      type: string
+      enum:
+      - left top
+      - left center
+      - left bottom
+      - center top
+      - center center
+      - center bottom
+      - right top
+      - right center
+      - right bottom
+    bgPresetImageUrl:
+      type: string
+    bgRepeat:
+      type: string
+      enum:
+      - repeat
+      - repeat-x
+      - repeat-y
+      - no-repeat
+      - cover
+    bgType:
+      type: string
+    textColor:
+      type: string

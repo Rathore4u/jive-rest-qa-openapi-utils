@@ -1,0 +1,29 @@
+Idea:
+ allOf:
+  - $ref: ../models/Content.yml#/Content
+  - type: object
+    properties:
+      authors:
+        type: array
+        items:
+          $ref: ../models/Person.yml#/Person
+      authorship:
+        type: string
+      authorshipPolicy:
+        type: string
+        enum:
+        - open
+        - single
+        - multiple
+      commentCount:
+        type: integer
+      promote:
+        type: boolean
+      score:
+        type: integer
+      stage:
+        type: string
+      voteCount:
+        type: integer
+      voted:
+        type: boolean

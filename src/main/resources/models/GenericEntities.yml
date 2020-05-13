@@ -1,0 +1,10 @@
+GenericEntities:
+  allOf:
+    - $ref: ../models/Entities.yml#/Entities
+    - type: object
+      properties:
+        list:
+          type: array
+          items:
+            type: object
+            additionalProperties: true

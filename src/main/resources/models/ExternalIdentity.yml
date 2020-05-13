@@ -1,0 +1,14 @@
+---
+ExternalIdentity:
+  type: object
+  properties:
+    identity:
+      type: string
+    identityType:
+      type: string
+      enum:
+      - SAML
+      - FACEBOOK
+      - LDAP_DN
+      - LDAP_UUID
+      - OPEN_ID

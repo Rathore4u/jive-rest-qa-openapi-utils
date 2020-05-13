@@ -1,0 +1,18 @@
+---
+PersonRoles:
+  type: object
+  properties:
+    fullAccess:
+      type: boolean
+    manageCommunity:
+      type: boolean
+    manageGroups:
+      type: boolean
+    manageNewsStreams:
+      type: boolean
+    manageSystem:
+      type: boolean
+    manageUsers:
+      type: boolean
+    moderate:
+      type: boolean

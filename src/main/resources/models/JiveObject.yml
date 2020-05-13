@@ -1,0 +1,39 @@
+JiveObject:
+ type: object
+ properties: 
+  associatable:
+    type: boolean
+  availability:
+    type: string
+  commentable:
+    type: boolean
+  content:
+    type: boolean
+  description:
+    type: string
+  example:
+    type: string
+  fields:
+    type: array
+    items:
+      $ref: ../models/Field.yml#/Field
+  name:
+    type: string
+  objectType:
+    type: integer
+  outcomeTypes:
+    type: array
+    items:
+      $ref: ../models/OutcomeType.yml#/OutcomeType
+  place:
+    type: boolean
+  plural:
+    type: string
+  resourceLinks:
+    type: array
+    items:
+      $ref: ../models/Resource.yml#/Resource
+  since:
+    type: string
+  likeable:
+    type: boolean

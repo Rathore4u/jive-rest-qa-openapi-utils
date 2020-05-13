@@ -1,0 +1,61 @@
+---
+Person:
+  type: object
+  properties:
+    addresses:
+      type: array
+      items:
+        "$ref":  ../models/Address.yml#/Address
+    directReportCount:
+      type: integer
+    displayName:
+      type: string
+    emails:
+      type: array
+      items:
+        "$ref":  ../models/Email.yml#/Email
+    followerCount:
+      type: integer
+    followingCount:
+      type: integer
+    id:
+      type: string
+    initialLogin:
+      type: string
+      format: date-time
+    jive:
+      "$ref":  ../models/Jive.yml#/Jive
+    location:
+      type: string
+    mentionName:
+      type: string
+    name:
+      "$ref":  ../models/Name.yml#/Name
+    phoneNumbers:
+      type: array
+      items:
+        "$ref":  ../models/PhoneNumber.yml#/PhoneNumber
+    photos:
+      type: array
+      items:
+        "$ref":  ../models/Photo.yml#/Photo
+    published:
+      type: string
+      format: date-time
+    status:
+      type: string
+    tags:
+      type: array
+      items:
+        type: string
+    thumbnailId:
+      type: string
+    thumbnailUrl:
+      type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

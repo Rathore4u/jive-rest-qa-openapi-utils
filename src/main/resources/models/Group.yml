@@ -1,0 +1,55 @@
+Group:
+  allOf:
+    - $ref: ../models/Place.yml#/Place
+    - type: object
+      properties:
+        creator:
+          $ref: ../models/Person.yml#/Person
+        extendedAuthorsEnabled:
+          type: boolean
+        followerCount:
+          type: integer
+        groupTypeV2:
+          type: string
+        highlightBody:
+          type: string
+        highlightSubject:
+          type: string
+        highlightTags:
+          type: string
+        iconCss:
+          type: string
+        likeCount:
+          type: integer
+        memberCount:
+          type: integer
+        parentContent:
+          $ref: ../models/Summary.yml#/Summary
+        parentPlace:
+          $ref: ../models/Summary.yml#/Summary
+        placeTopics:
+          type: array
+          items:
+            $ref: ../models/PlaceTopic.yml#/PlaceTopic
+        published:
+          type: string
+          format: date-time
+        searchRankings:
+          type: object
+        status:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        updated:
+          type: string
+          format: date-time
+        viewCount:
+          type: integer
+        visibleToExternalContributors:
+          type: boolean
+        followed:
+          type: boolean
+        promotedResult:
+          type: boolean

@@ -1,0 +1,9 @@
+EventInviteRequest:
+  type: object
+  properties:
+    body:
+      type: string
+    invitees:
+      type: array
+      items:
+        type: string

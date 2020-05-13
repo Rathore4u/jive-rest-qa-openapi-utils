@@ -1,0 +1,20 @@
+---
+Image:
+  allOf:
+  - "$ref":  ../models/Content.yml#/Content
+  - type: object
+    properties:
+      contentType:
+        type: string
+      description:
+        type: string
+      height:
+        type: integer
+      name:
+        type: string
+      width:
+        type: integer
+      ref:
+        type: string
+      size:
+        type: string

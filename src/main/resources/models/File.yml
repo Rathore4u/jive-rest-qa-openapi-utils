@@ -1,0 +1,30 @@
+---
+FileModel:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        authors:
+          type: array
+          items:
+            $ref: ../models/Person.yml#/Person
+        authorship:
+          type: string
+        binaryURL:
+          type: string
+        contentType:
+          type: string
+        editingBy:
+          $ref: ../models/Person.yml#/Person
+        name:
+          type: string
+        restrictComments:
+          type: boolean
+        size:
+          type: integer
+        updatedOnBehalfOf:
+          $ref: ../models/OnBehalfOf.yml#/OnBehalfOf
+        updater:
+          $ref: ../models/Person.yml#/Person
+        version:
+          type: integer

@@ -1,0 +1,14 @@
+---
+NewsStream:
+  type: object
+  properties:
+    activities:
+      type: array
+      items:
+        "$ref":  ../models/Activity.yml#/Activity
+    id:
+      type: string
+    stream:
+      "$ref":  ../models/Stream.yml#/Stream
+    type:
+      type: string

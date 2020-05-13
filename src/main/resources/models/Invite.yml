@@ -1,0 +1,35 @@
+Invite:
+  type: object
+  properties:
+    body:
+      type: string
+    email:
+      type: string
+    id:
+      type: string
+    invitee:
+      $ref: ../models/Person.yml#/Person
+    inviter:
+      $ref: ../models/Person.yml#/Person
+    place:
+      $ref: ../models/Place.yml#/Place
+    published:
+      type: string
+      format: date-time
+    revokeDate:
+      type: string
+      format: date-time
+    revoker:
+      $ref: ../models/Person.yml#/Person
+    sentDate:
+      type: string
+      format: date-time
+    state:
+      type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

@@ -1,0 +1,9 @@
+---
+OutcomeWithApprovers:
+  allOf:
+   - $ref: ../models/OutcomeBase.yml#/OutcomeBase
+   - type: object
+     properties:
+      properties:
+        $ref: ../models/OutcomePropertiesWithApprovers.yml#/OutcomePropertiesWithApprovers
+      

@@ -1,0 +1,16 @@
+---
+Favorite:
+  allOf:
+  - "$ref":  ../models/Content.yml#/Content
+  - type: object
+    properties:
+      favoriteObject:
+        type: object
+        properties:
+          type:
+            type: string
+          url:
+            type: string
+        additionalProperties: true
+      private:
+        type: boolean

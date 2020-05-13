@@ -1,0 +1,16 @@
+---
+OnBehalfOf:
+  type: object
+  properties:
+    email:
+      type: string
+    image:
+      "$ref":  ../models/MediaLink.yml#/MediaLink
+    name:
+      type: string
+    person:
+      "$ref":  ../models/Person.yml#/Person
+    profileUrl:
+      type: string
+    username:
+      type: string

@@ -1,0 +1,43 @@
+---
+Page:
+  type: object
+  properties:
+    displayOrder:
+      type: integer
+    extstreams:
+      type: array
+      items:
+        "$ref":  ../models/ExternalStreamInstance.yml#/ExternalStreamInstance
+    id:
+      type: string
+    layout:
+      type: string
+      enum:
+      - activity
+      - wide
+      - wide_narrow
+      - narrow_wide
+      - narrow_wide_narrow
+    name:
+      type: string
+    pageType:
+      type: string
+      enum:
+      - place
+      - user
+      - mobile
+      - news
+    parent:
+      type: string
+    published:
+      type: string
+      format: date-time
+    template:
+      "$ref":  ../models/PlaceTemplate.yml#/PlaceTemplate
+    tiles:
+      type: array
+      items:
+        "$ref":  ../models/TileInstance.yml#/TileInstance
+    updated:
+      type: string
+      format: date-time

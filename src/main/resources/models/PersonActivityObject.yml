@@ -1,0 +1,26 @@
+---
+PersonActivityObject:
+  type: object
+  properties:
+    displayName:
+      type: string
+    email:
+      type: string
+    id:
+      type: string
+    image:
+      "$ref":  ../models/MediaLink.yml#/MediaLink
+    jive:
+      "$ref":  ../models/Jive.yml#/Jive
+    name:
+      "$ref":  ../models/Name.yml#/Name
+    objectType:
+      type: string
+    published:
+      type: string
+      format: date-time
+    updated:
+      type: string
+      format: date-time
+    url:
+      type: string

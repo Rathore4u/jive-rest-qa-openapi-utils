@@ -1,0 +1,48 @@
+---
+Jive:
+  type: object
+  properties:
+    enabled:
+      type: boolean
+    external:
+      type: boolean
+    externalContributor:
+      type: boolean
+    externalIdentities:
+      type: array
+      items:
+        "$ref":  ../models/ExternalIdentity.yml#/ExternalIdentity
+    federated:
+      type: boolean
+    lastAuthenticated:
+      type: string
+      format: date-time
+    lastProfileUpdate:
+      type: string
+      format: date-time
+    level:
+      "$ref":  ../models/Level.yml#/Level
+    locale:
+      type: string
+    password:
+      type: string
+    profile:
+      type: array
+      items:
+        "$ref":  ../models/Profile.yml#/Profile
+    roleBadge:
+      "$ref":  ../models/RoleBadge.yml#/RoleBadge
+    sendable:
+      type: boolean
+    status:
+      type: string
+    termsAndConditionsRequired:
+      type: boolean
+    timeZone:
+      type: string
+    username:
+      type: string
+    viewContent:
+      type: boolean
+    visible:
+      type: boolean

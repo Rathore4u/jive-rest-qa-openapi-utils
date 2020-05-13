@@ -1,0 +1,9 @@
+OutcomePropertiesWithApprovers:
+ type: object
+ properties:
+   message: 
+      type: string
+   approvers:
+      type: array
+      items: 
+          type: string
