@@ -1,0 +1,57 @@
+---
+PlaceTemplate:
+  type: object
+  properties:
+    author:
+      type: string
+    blurb:
+      type: string
+    categories:
+      type: array
+      items:
+        "$ref":  ../models/PlaceTemplateCategory.yml#/PlaceTemplateCategory
+    contentTypes:
+      type: array
+      items:
+        type: string
+    description:
+      type: string
+    descriptionLocalized:
+      type: string
+    displayName:
+      type: string
+    displayNameLocalized:
+      type: string
+    extensionUUID:
+      type: string
+    extstreams:
+      type: array
+      items:
+        "$ref":  ../models/ExternalStreamDefinition.yml#/ExternalStreamDefinition
+    groupType:
+      type: string
+    headerSettings:
+      "$ref":  ../models/HeaderSettings.yml#/HeaderSettings
+    id:
+      type: string
+    name:
+      type: string
+    state:
+      type: string
+      enum:
+      - published
+      - archived
+    subtitle:
+      type: string
+    tags:
+      type: array
+      items:
+        type: string
+    tiles:
+      type: array
+      items:
+        "$ref":  ../models/TileDefinition.yml#/TileDefinition
+    global:
+      type: boolean
+    visibleToExternalContributors:
+      type: boolean

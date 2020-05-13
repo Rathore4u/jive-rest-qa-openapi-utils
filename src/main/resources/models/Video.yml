@@ -1,0 +1,98 @@
+Video:
+  type: object
+  properties:
+    abuseCount:
+      type: integer
+    author:
+      $ref: ../models/Person.yml#/Person
+    categories:
+      type: array
+      items:
+        type: string
+    content:
+      $ref: ../models/ContentBody.yml#/ContentBody
+    contentID:
+      type: string
+    contentImages:
+      type: array
+      items:
+        $ref: ../models/Image.yml#/Image
+    contentVideos:
+      type: array
+      items:
+        $ref: ../models/ContentVideo.yml#/ContentVideo
+    extendedAuthors:
+      type: array
+      items:
+        $ref: ../models/Person.yml#/Person
+    favoriteCount:
+      type: integer
+    followerCount:
+      type: integer
+    highlightBody:
+      type: string
+    highlightSubject:
+      type: string
+    highlightTags:
+      type: string
+    iconCss:
+      type: string
+    id:
+      type: string
+    lastActivityDate:
+      type: string
+      format: date-time
+    likeCount:
+      type: integer
+    outcomeTypes:
+      type: array
+      items:
+        $ref: ../models/OutcomeType.yml#/OutcomeType
+    parent:
+      type: string
+    parentContent:
+      $ref: ../models/Summary.yml#/Summary
+    parentContentVisible:
+      type: boolean
+    parentPlace:
+      $ref: ../models/Summary.yml#/Summary
+    parentVisible:
+      type: boolean
+    published:
+      type: string
+      format: date-time
+    replyCount:
+      type: integer
+    resources:
+      $ref: ../models/RestResources.yml#/RestResources
+    searchRankings:
+      type: object
+      additionalProperties: true
+    status:
+      type: string
+    subject:
+      type: string
+    tags:
+      type: array
+      items:
+        type: string
+    type:
+      type: string
+      default: video
+    updated:
+      type: string
+      format: date-time
+    users:
+      type: array
+      items:
+        $ref: ../models/Person.yml#/Person
+    viewCount:
+      type: integer
+    visibility:
+      type: string
+    visibleToExternalContributors:
+      type: boolean
+    followed:
+      type: boolean
+    promotedResult:
+      type: boolean

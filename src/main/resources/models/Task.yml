@@ -1,0 +1,19 @@
+---
+Task:
+  allOf:
+  - "$ref":  ../models/Content.yml#/Content
+  - type: object
+    properties:
+      completed:
+        type: boolean
+      dueDate:
+        type: string
+        format: date-time
+      owner:
+        type: string
+      parentTask:
+        type: string
+      subTasks:
+        type: array
+        items:
+          type: string

@@ -1,0 +1,31 @@
+Project:
+  allOf:
+    - $ref: ../models/Content.yml#/Content
+    - type: object
+      properties:
+        contentTypes:
+          type: array
+          items:
+            type: string
+        creator:
+          $ref: ../models/Person.yml#/Person
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        locale:
+          type: string
+        name:
+          type: string
+        placeID:
+          type: string
+        placeTopics:
+          type: array
+          items:
+            $ref: ../models/PlaceTopic.yml#/PlaceTopic
+        projectStatus:
+          type: string
+        startDate:
+          type: string
+          format: date-time

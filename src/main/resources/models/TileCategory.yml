@@ -1,0 +1,24 @@
+---
+TileCategory:
+  type: object
+  properties:
+    defaultCategory:
+      type: boolean
+    description:
+      type: string
+    displayNameLocalized:
+      type: string
+    hidden:
+      type: boolean
+    id:
+      type: string
+    jiveCategory:
+      type: boolean
+    name:
+      type: string
+    tiles:
+      type: array
+      items:
+        "$ref":  ../models/TileDefinition.yml#/TileDefinition
+    type:
+      type: string

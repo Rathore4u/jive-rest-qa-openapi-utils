@@ -1,0 +1,18 @@
+---
+ProfileImage:
+  type: object
+  properties:
+    followerCount:
+      type: integer
+    id:
+      type: string
+    likeCount:
+      type: integer
+    ref:
+      type: string
+    tags:
+      type: array
+      items:
+        type: string
+    followed:
+      type: boolean

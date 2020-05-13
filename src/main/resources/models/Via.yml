@@ -1,0 +1,8 @@
+---
+Via:
+  type: object
+  properties:
+    displayName:
+      type: string
+    url:
+      type: string

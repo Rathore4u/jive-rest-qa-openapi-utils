@@ -1,0 +1,25 @@
+---
+Summary:
+  type: object
+  properties:
+    answer:
+      type: string
+    externalID:
+      type: string
+    externalStreamID:
+      type: string
+    html:
+      type: string
+      description: The URI of the HTML representation of the summarized object.
+    id:
+      type: string
+    name:
+      type: string
+    question:
+      type: boolean
+    resolved:
+      type: string
+    type:
+      type: string
+    uri:
+      type: string

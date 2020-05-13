@@ -1,0 +1,26 @@
+Plugin:
+  type: object
+  properties:
+    author:
+      type: string
+    broken:
+      type: boolean
+    databaseKey:
+      type: string
+    dependency:
+      type: string
+    description:
+      type: string
+    installed:
+      type: boolean
+    minServerVersion:
+      type: string
+    name:
+      type: string
+    properties:
+      type: Object
+      additionalProperties: true
+    uninstalled:
+      type: boolean
+    version:
+      type: string

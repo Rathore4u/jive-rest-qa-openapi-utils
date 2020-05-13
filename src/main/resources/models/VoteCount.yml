@@ -1,0 +1,7 @@
+VoteCount:
+  type: object
+  properties:
+    option:
+      type: string
+    count:
+      type: number

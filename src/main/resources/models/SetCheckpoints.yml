@@ -1,0 +1,7 @@
+SetCheckpoints:
+  type: object
+  properties:
+    list:
+      type: array
+      items:
+        $ref: ../models/SetCheckpoint.yml#/SetCheckpoint

@@ -1,0 +1,16 @@
+---
+Slide:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        image:
+          type: string
+        publishDate:
+          type: string
+          format: date-time
+        sortKey:
+          type: integer
+        targetLink:
+          type: string
+

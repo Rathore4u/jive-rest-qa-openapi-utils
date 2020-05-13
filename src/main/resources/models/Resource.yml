@@ -1,0 +1,24 @@
+---
+Resource:
+  type: object
+  properties:
+    availability:
+      type: string
+    description:
+      type: string
+    example:
+      type: string
+    hasBody:
+      type: boolean
+    jsMethod:
+      type: string
+    name:
+      type: string
+    path:
+      type: string
+    since:
+      type: string
+    unpublished:
+      type: boolean
+    verb:
+      type: string

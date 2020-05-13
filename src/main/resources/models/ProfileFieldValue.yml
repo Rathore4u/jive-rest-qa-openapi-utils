@@ -1,0 +1,15 @@
+ProfileFieldValue:
+  type: object
+  properties:
+    fieldID:
+      type: integer
+    typeID:
+      type: integer
+    values:
+      type: array
+      items:
+        type: string
+    value:
+      type: string
+    primaryIndex:
+      type: integer

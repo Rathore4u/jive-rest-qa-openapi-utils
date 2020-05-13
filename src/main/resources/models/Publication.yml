@@ -1,0 +1,31 @@
+---
+Publication:
+  allOf:
+    - type: object
+      properties:
+        author:
+          $ref: ../models/Person.yml#/Person
+        displayOrder:
+          type: integer
+        id:
+          type: string
+        name:
+          type: string
+        published:
+          type: string
+          format: date-time
+        subscribersType:
+          type: string
+        subscriptions:
+          type: array
+          items:
+            $ref: ../models/Subscription.yml#/Subscription
+        type:
+          type: string
+        updated:
+          type: string
+          format: date-time
+        beingProcessed:
+          type: boolean
+        receiveEmails:
+          type: boolean

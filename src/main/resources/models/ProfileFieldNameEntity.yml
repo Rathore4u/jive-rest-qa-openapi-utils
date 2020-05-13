@@ -1,0 +1,4 @@
+ProfileFieldNameEntity:
+  # Actually should be the reverse thing.
+  allOf:
+   - $ref: ../models/ProfileField.yml#/ProfileField

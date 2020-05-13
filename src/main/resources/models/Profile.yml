@@ -1,0 +1,8 @@
+---
+Profile:
+  type: object
+  properties:
+    value:
+      type: string
+    jive_label:
+      type: string

@@ -1,0 +1,12 @@
+---
+ProfileFieldOption:
+  type: object
+  properties:
+    defaultOption:
+      type: boolean
+    id:
+      type: string
+    index:
+      type: integer
+    value:
+      type: string

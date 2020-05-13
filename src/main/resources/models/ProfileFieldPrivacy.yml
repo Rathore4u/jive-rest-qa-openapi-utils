@@ -1,0 +1,21 @@
+---
+ProfileFieldPrivacy:
+  type: object
+  properties:
+    fieldEditable:
+      type: boolean
+    id:
+      type: string
+    profileField:
+      "$ref":  ../models/ProfileField.yml#/ProfileField
+    type:
+      type: string
+    visibility:
+      type: string
+      enum:
+      - registered
+      - colleagues
+      - connections
+      - connections_and_colleagues
+      - private
+      - all_but_partner

@@ -1,0 +1,22 @@
+---
+Static:
+  type: object
+  properties:
+    author:
+      "$ref":  ../models/Person.yml#/Person
+    description:
+      type: string
+    filename:
+      type: string
+    id:
+      type: string
+    place:
+      "$ref":  ../models/Place.yml#/Place
+    published:
+      type: string
+      format: date-time
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time

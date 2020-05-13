@@ -1,0 +1,7 @@
+ProfileFieldValueCount:
+  type: object
+  properties:
+    value:
+      $ref: ../models/ProfileFieldValue.yml#/ProfileFieldValue
+    count:
+      type: integer

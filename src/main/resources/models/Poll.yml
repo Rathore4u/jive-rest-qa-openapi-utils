@@ -1,0 +1,35 @@
+---
+Poll:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        endDate:
+          type: string
+          format: date-time
+        expirationDate:
+          type: string
+          format: date-time
+        options:
+          type: array
+          items:
+            type: string
+        optionsImages:
+          type: array
+          items:
+            $ref: ../models/PollOptionImage.yml#/PollOptionImage
+        startDate:
+          type: string
+          format: date-time
+        voteCount:
+          type: integer
+        voteDates:
+          type: array
+          items:
+            type: string
+            format: date-time
+        votes:
+          type: array
+          items:
+            type: string
+

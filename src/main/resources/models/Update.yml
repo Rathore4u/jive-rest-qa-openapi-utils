@@ -1,0 +1,13 @@
+---
+Update:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        latitude:
+          type: number
+        longitude:
+          type: number
+        repost:
+          $ref: ../models/Update.yml#/Update
+

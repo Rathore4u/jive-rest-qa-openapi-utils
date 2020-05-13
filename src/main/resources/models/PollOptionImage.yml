@@ -1,0 +1,23 @@
+PollOptionImage:
+  type: object
+  properties:
+    followerCount:
+      type: integer
+    image:
+      $ref: ../models/Image.yml#/Image
+    likeCount:
+      type: integer
+    option:
+      type: string
+    published:
+      type: string
+      format: date-time
+    tags:
+      type: array
+      items:
+        type: string
+    updated:
+      type: string
+      format: date-time
+    followed:
+      type: boolean

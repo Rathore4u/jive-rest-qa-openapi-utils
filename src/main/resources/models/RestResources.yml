@@ -1,0 +1,4 @@
+RestResources:
+  type: object
+  additionalProperties:
+    $ref: ../models/RestResource.yml#/RestResource

@@ -1,0 +1,21 @@
+---
+Post:
+  allOf:
+    - "$ref":  ../models/Content.yml#/Content
+    - type: object
+      properties:
+        authors:
+          type: array
+          items:
+            $ref: ../models/Person.yml#/Person
+        authorship:
+          type: string
+        banner:
+          $ref: ../models/ContentBanner.yml#/ContentBanner
+        permalink:
+          type: string
+        publishDate:
+          type: string
+          format: date-time
+        restrictComments:
+          type: boolean

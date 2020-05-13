@@ -1,0 +1,15 @@
+ShareRequest:
+ type: object
+ properties:
+  content:
+    $ref: ../models/ContentBody.yml#/ContentBody
+  participants:
+    type: array
+    items:
+     type: string
+  shared:
+   type: string
+  places:
+    type: array
+    items:
+      type: string

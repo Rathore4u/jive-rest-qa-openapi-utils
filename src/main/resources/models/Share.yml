@@ -1,0 +1,98 @@
+Share:
+ type: object
+ properties:
+  abuseCount:
+    type: integer
+  author:
+    $ref: ../models/Person.yml#/Person
+  authors:
+    type: array
+    items:
+      $ref: ../models/Summary.yml#/Summary
+  content:
+    $ref: ../models/ContentBody.yml#/ContentBody
+  contentImages:
+    type: array
+    items:
+      $ref: ../models/Image.yml#/Image
+  contentVideos:
+    type: array
+    items:
+      $ref: ../models/ContentVideo.yml#/ContentVideo
+  favoriteCount:
+    type: integer
+  followerCount:
+    type: integer
+  highlightBody:
+    type: string
+  highlightSubject:
+    type: string
+  highlightTags:
+    type: string
+  iconCss:
+    type: string
+  id:
+    type: string
+  lastActivityDate:
+    type: string
+    format: date-time
+  likeCount:
+    type: integer
+  parent:
+    type: string
+  parentContent:
+    $ref: ../models/Summary.yml#/Summary
+  parentContentVisible:
+    type: boolean
+  parentPlace:
+    $ref: ../models/Summary.yml#/Summary
+  parentVisible:
+    type: boolean
+  participants:
+    type: array
+    items:
+      $ref: ../models/Person.yml#/Person
+  places:
+    type: array
+    items:
+      $ref: ../models/Place.yml#/Place
+  published:
+    type: string
+    format: date-time
+  replyCount:
+    type: integer
+  resources:
+    $ref: ../models/RestResources.yml#/RestResources
+  searchRankings:
+    type: object
+    additionalProperties: true
+  sharedContent:
+    type: object
+    additionalProperties: true
+  sharedPlace:
+    $ref: ../models/Place.yml#/Place
+  status:
+    type: string
+  subject:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+  type:
+    type: string
+  updated:
+    type: string
+    format: date-time
+  viewCount:
+    type: integer
+  viewers:
+    type: array
+    items:
+      $ref: ../models/Summary.yml#/Summary
+  visibleToExternalContributors:
+    type: boolean
+  followed:
+    type: boolean
+  promotedResult:
+    type: boolean

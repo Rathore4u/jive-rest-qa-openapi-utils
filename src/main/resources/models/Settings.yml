@@ -1,0 +1,16 @@
+---
+Settings:
+  type: object
+  properties:
+    activityTab:
+      type: boolean
+    defaultTab:
+      type: string
+    headerSettings:
+      "$ref":  ../models/HeaderSettings.yml#/HeaderSettings
+    id:
+      type: string
+    overviewTab:
+      type: boolean
+    place:
+      type: string

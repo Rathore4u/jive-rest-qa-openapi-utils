@@ -1,0 +1,27 @@
+---
+Subscription:
+  allOf:
+    - type: object
+      properties:
+        associations:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        name:
+          type: string
+        published:
+          type: string
+          format: date-time
+        subscriberCount:
+          type: integer
+        subscribers:
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+        updated:
+          type: string
+          format: date-time

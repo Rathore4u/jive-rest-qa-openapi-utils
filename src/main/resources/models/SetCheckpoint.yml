@@ -1,0 +1,10 @@
+SetCheckpoint:
+  type: object
+  properties:
+    name:
+      type: string
+    dueDate:
+      type: string
+      format: date-time
+    description:
+      type: string

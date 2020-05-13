@@ -1,0 +1,90 @@
+---
+TileDefinition:
+  type: object
+  properties:
+    action:
+      type: string
+    addOn:
+      "$ref":  ../models/AddOn.yml#/AddOn
+    categories:
+      type: array
+      items:
+        "$ref":  ../models/TileCategory.yml#/TileCategory
+    client_id:
+      type: string
+    config:
+      type: string
+    defaultConfigShared:
+      type: string
+    deprecation:
+      "$ref":  ../models/Deprecation.yml#/Deprecation
+    description:
+      type: string
+    descriptionLocalized:
+      type: string
+    displayName:
+      type: string
+    displayNameLocalized:
+      type: string
+    displayWidth:
+      type: string
+    icons:
+      type: object
+    id:
+      type: string
+    isDeletable:
+      type: boolean
+    name:
+      type: string
+    pageTypes:
+      type: array
+      items:
+        type: string
+    productName:
+      type: string
+    published:
+      type: string
+      format: date-time
+    register:
+      type: string
+    sampleData:
+      type: object
+    state:
+      type: string
+      enum:
+      - published
+      - archived
+      - disabled
+      - locked
+      - unlocked
+      - global_locked
+      - global_unlocked
+    style:
+      type: string
+      enum:
+      - CALENDAR
+      - LIST
+      - GAUGE
+      - ACTIVITY
+      - TABLE
+      - GALLERY
+      - CONTENT
+      - CONTENTLISTWIDE
+      - CONTENTLISTNARROW
+      - SECTIONLIST
+      - CAROUSEL
+      - QUESTION
+      - CUSTOM_VIEW
+    unregister:
+      type: string
+    updated:
+      type: string
+      format: date-time
+    usesOAuth2:
+      type: boolean
+    view:
+      type: string
+    configurationRequired:
+      type: boolean
+    followed:
+      type: boolean

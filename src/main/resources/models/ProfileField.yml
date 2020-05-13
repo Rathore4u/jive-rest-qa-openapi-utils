@@ -1,0 +1,61 @@
+---
+ProfileField:
+  type: object
+  properties:
+    editable:
+      type: boolean
+    externallyManaged:
+      type: boolean
+    fieldType:
+      type: string
+      enum:
+      - boolean
+      - date
+      - decimal
+      - email
+      - number
+      - largetext
+      - multilist
+      - singlelist
+      - text
+      - url
+      - phone_number
+      - phone
+      - zip_code
+      - zip
+      - address
+    filterable:
+      type: boolean
+    id:
+      type: string
+    index:
+      type: integer
+    name:
+      type: string
+    options:
+      type: array
+      items:
+        "$ref":  ../models/ProfileFieldOption.yml#/ProfileFieldOption
+    profileHeader:
+      type: boolean
+    required:
+      type: boolean
+    searchable:
+      type: boolean
+    texts:
+      type: array
+      items:
+        "$ref":  ../models/ProfileFieldText.yml#/ProfileFieldText
+    type:
+      type: string
+    visibilityDefault:
+      type: string
+      enum:
+      - registered
+      - colleagues
+      - connections
+      - connections_and_colleagues
+      - private
+      - all_but_partner
+    visibilityEditable:
+      type: boolean

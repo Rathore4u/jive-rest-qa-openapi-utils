@@ -1,0 +1,22 @@
+---
+PlaceTemplateCategory:
+  type: object
+  properties:
+    description:
+      type: string
+    displayNameLocalized:
+      type: string
+    hidden:
+      type: boolean
+    id:
+      type: string
+    jiveCategory:
+      type: boolean
+    name:
+      type: string
+    templates:
+      type: array
+      items:
+        "$ref":  ../models/PlaceTemplate.yml#/PlaceTemplate
+    type:
+      type: string

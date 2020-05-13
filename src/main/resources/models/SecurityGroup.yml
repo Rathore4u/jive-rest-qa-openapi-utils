@@ -1,0 +1,33 @@
+---
+SecurityGroup:
+  type: object
+  properties:
+    administratorCount:
+      type: integer
+    description:
+      type: string
+    federated:
+      type: boolean
+    id:
+      type: string
+    memberCount:
+      type: integer
+    name:
+      type: string
+    properties:
+      type: object
+      additionalProperties:
+        items:
+          type: string
+    published:
+      type: string
+      format: date-time
+    tags:
+      type: array
+      items:
+        type: string
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time

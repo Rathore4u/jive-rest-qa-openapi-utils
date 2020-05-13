@@ -1,0 +1,58 @@
+---
+TileInstance:
+  type: object
+  properties:
+    column:
+      type: integer
+    config:
+      type: object
+    data:
+      type: object
+    definition:
+      "$ref":  ../models/TileDefinition.yml#/TileDefinition
+    externalId:
+      type: string
+    id:
+      type: string
+    lastDataPush:
+      type: string
+      format: date-time
+    lastRegister:
+      type: string
+      format: date-time
+    parent:
+      type: string
+    published:
+      type: string
+      format: date-time
+    publishError:
+      "$ref":  ../models/PublishError.yml#/PublishError
+    state:
+      type: string
+      enum:
+      - STAGED
+      - VISIBLE
+    status:
+      type: object
+    updated:
+      type: string
+      format: date-time
+    viewstyle:
+      type: string
+      enum:
+      - CALENDAR
+      - LIST
+      - GAUGE
+      - TABLE
+      - IFRAME
+      - GALLERY
+      - ACTIVITY
+      - CONTENT
+      - CONTENTLISTWIDE
+      - CONTENTLISTNARROW
+      - SECTIONLIST
+      - CAROUSEL
+      - QUESTION
+      - CUSTOM_VIEW
+    followed:
+      type: boolean

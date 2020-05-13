@@ -1,0 +1,8 @@
+---
+PrivateProps:
+  type: object
+  properties:
+    id:
+      type: string
+  additionalProperties:
+    type: string

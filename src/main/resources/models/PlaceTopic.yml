@@ -1,0 +1,16 @@
+---
+PlaceTopic:
+  type: object
+  properties:
+    creationDate:
+      type: integer
+    displayNameLocalized:
+      type: string
+    hidden:
+      type: boolean
+    id:
+      type: string
+    modificationDate:
+      type: integer
+    name:
+      type: string

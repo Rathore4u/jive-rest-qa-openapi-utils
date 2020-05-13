@@ -1,0 +1,10 @@
+---
+RoleBadge:
+  type: object
+  properties:
+    groupBadgeRoleName:
+      type: string
+    groupBadgeUri:
+      type: string
+    id:
+      type: string

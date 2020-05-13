@@ -1,0 +1,39 @@
+---
+Stream:
+  type: object
+  properties:
+    count:
+      type: integer
+    id:
+      type: string
+    name:
+      type: string
+    newUpdates:
+      type: string
+      format: date-time
+    person:
+      "$ref":  ../models/Person.yml#/Person
+    previousUpdates:
+      type: string
+      format: date-time
+    published:
+      type: string
+      format: date-time
+    receiveEmails:
+      type: boolean
+    source:
+      type: string
+      enum:
+      - all
+      - communications
+      - connections
+      - context
+      - profile
+      - watches
+      - publication
+      - custom
+    type:
+      type: string
+    updated:
+      type: string
+      format: date-time

@@ -1,0 +1,17 @@
+RestResource:
+  type: object
+  properties:
+    ref:
+      type: string
+    allowed:
+      type: array
+      items:
+        type: string
+        enum:
+          - GET
+          - POST
+          - DELETE
+          - PATCH
+          - PUT
+          - OPTIONS
+          - HEAD
