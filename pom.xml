@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>openapi-generator-maven-plugin</artifactId>
-            <version>3.3.4</version>
+            <version>5.1.0</version>
         </dependency>
         <!-- for swagger auto generated stuff -->
         <dependency>
@@ -134,7 +134,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>3.3.4</version>
+                <version>5.1.0</version>
                 <executions>
                     <execution>
                         <id>api-v2</id>
